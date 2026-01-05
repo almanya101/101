@@ -60,7 +60,7 @@
       title: "PortableApps",
       href: "https://portableapps.com/",
       note: "Run apps without installation, directly from a USB stick or folder.",
-      img: "/.img/z0bookmark0010.png",
+      img: "/./img/z0bookmark0010.png",
       category: "tools"
     }
   ];

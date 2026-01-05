@@ -382,9 +382,9 @@ window.BUYORBYE_APP = (function () {
       outcomeWrap.appendChild(makeEl("p", { class: wordClass }, esc(out.label)));
 
       const imgMap = {
-        buy: "/.img/buyorbyeclipbuy.jpg",
-        wait: "/.img/buyorbyeclipwait.jpg",
-        bye: "/.img/buyorbyeclipbye.jpg"
+        buy: "/./img/buyorbyeclipbuy.jpg",
+        wait: "/./img/buyorbyeclipwait.jpg",
+        bye: "/./img/buyorbyeclipbye.jpg"
       };
 
       outcomeWrap.appendChild(makeEl("img", { class: "clipart-img", src: imgMap[outcome], alt: out.label }));
