@@ -1047,7 +1047,7 @@ register("privateProjects", () => `
    
    ===================================================== */
 register("contact", () => `
-  <div id="contact" class="detail-card card-color-2">
+  <div id="contacts" class="detail-card card-color-2">
     <div class="card-buttons">
       <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
       <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
