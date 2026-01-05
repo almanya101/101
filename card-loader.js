@@ -45,17 +45,81 @@
 
 
 /* =====================================================
-   CARD LOADER — UBT
-   - Tüm kart component'leri burada tanımlanır
-   - Sayfalar sadece "hangi kartlar?" der
-   - Navigation MANUAL kalır (senin kontrolün)
+   📚 CARD LOADER — UBT / ALMANYA101
+   =====================================================
+   
+   🎯 AMAÇ:
+   Bu dosya, tüm sayfalarda kullanılan kart component'lerini
+   merkezi bir yerden yönetmenizi sağlar. Her kart bir template
+   fonksiyonu olarak tanımlanır ve sayfalar sadece "hangi kartları
+   göstermek istiyorum?" diye sorar.
+   
+   📖 NASIL KULLANILIR?
+   --------------------
+   1. YENİ KART EKLEMEK İÇİN:
+      register("kartAdi", () => `
+        <div class="detail-card card-color-X">
+          <!-- Kart içeriği buraya -->
+        </div>
+      `);
+   
+   2. SAYFADA KARTLARI GÖSTERMEK İÇİN:
+      <div id="cards-root"></div>
+      <script>
+        cardLoader.renderInto("cards-root", ["kartAdi1", "kartAdi2"]);
+      </script>
+   
+   3. HERO KARTI EKLEMEK İÇİN:
+      <div id="hero-root"></div>
+      <script>
+        cardLoader.renderInto("hero-root", ["heroKartAdi"]);
+      </script>
+   
+   🎨 RENK PALETİ (CARD-COLOR):
+   ----------------------------
+   card-color-1 (Mavi)   #00A4EF  → Dokümanlar, CV, Linkler (resmi, güven)
+   card-color-2 (Yeşil)  #7FBA00  → Başarılar, İletişim (pozitif, sonuç)
+   card-color-3 (Turuncu) #F7630C → Hakkımda, Teknoloji (enerji, hareket)
+   card-color-4 (Mor)    #A700AE  → Deneyim (kıdem, derinlik)
+   card-color-5 (Sarı)   #FFB900  → Projeler, Vurgular (dikkat, vurgu)
+   
+   ⚠️ ÖNEMLİ NOTLAR:
+   -----------------
+   - Hero kartları: class="card hero-card" (card-color KULLANMAYIN)
+   - Navigation: class="card nav-card" (sabit sarı renk)
+   - İçerik kartları: class="detail-card card-color-X"
+   - card-color-1..4: Yazı rengi beyaz (color:white)
+   - card-color-5: Yazı rengi koyu (color:#222) - sarıda beyaz okunmaz
+   
+   📝 KART SIRALAMASI:
+   -------------------
+   Kartlar aşağıdaki sırayla düzenlenmiştir:
+   1. HERO KARTLARI (Sayfa başlıkları)
+   2. STATİK KARTLAR (CV, About Me, Contact, vb.)
+   3. DATA-DRIVEN KARTLAR (Articles, Bookmarks, Tools, vb.)
+   
+   Her kart bölümü kendi içinde alfabetik veya mantıksal sırada
+   düzenlenmiştir.
+   
    ===================================================== */
 
 (function () {
   /* =====================================================
-     1) INTERNAL REGISTRY
-     - register(): kart template'lerini kaydeder
-     - renderInto(): seçilen kartları root'a basar
+     1) INTERNAL REGISTRY (İÇ KAYIT SİSTEMİ)
+     =====================================================
+     
+     Bu bölüm kart template'lerini kaydeder ve sayfaya render eder.
+     
+     register(name, templateFn):
+       - name: Kartın benzersiz adı (string)
+       - templateFn: HTML string döndüren fonksiyon
+       - Örnek: register("cv", () => `<div>...</div>`)
+     
+     renderInto(rootId, cardNames):
+       - rootId: HTML'deki container element ID'si (örn: "cards-root")
+       - cardNames: Gösterilecek kart adlarının array'i
+       - Örnek: renderInto("cards-root", ["cv", "contact"])
+     
      ===================================================== */
 
   // -----------------------------
@@ -91,9 +155,19 @@
 
 
   /* =====================================================
-     2) FALLBACKS + HELPERS
-     - missingCard(): kart bulunamazsa uyarı kartı basar
-     - escapeHtml(): XSS / kırılma önler
+     2) FALLBACKS + HELPERS (YARDIMCI FONKSİYONLAR)
+     =====================================================
+     
+     missingCard(name):
+       - Eğer bir kart adı kayıtlı değilse, bu fonksiyon
+         uyarı kartı gösterir.
+       - Kullanım: Otomatik olarak renderInto() içinde çağrılır.
+     
+     escapeHtml(str):
+       - HTML özel karakterlerini güvenli hale getirir.
+       - XSS (Cross-Site Scripting) saldırılarını önler.
+       - Örnek: "<script>" → "&lt;script&gt;"
+     
      ===================================================== */
 
   function missingCard(name) {
@@ -118,13 +192,53 @@
 
 
   /* =====================================================
-     3) CARD TEMPLATES (PLACEHOLDERS)
-     - ID'ler navigation ile eşleşmeli
-     - Sınıflar mevcut CSS ile uyumlu
+     3) CARD TEMPLATES (KART ŞABLONLARI)
+     =====================================================
+     
+     Bu bölümde tüm kart template'leri tanımlanır.
+     
+     KART YAPISI:
+     ------------
+     - Her kart bir register() çağrısı ile tanımlanır
+     - Kart adı benzersiz olmalıdır
+     - Kart HTML string döndürmelidir
+     - ID'ler navigation ile eşleşmelidir (scroll için)
+     - CSS sınıfları ubt-shared.css ile uyumlu olmalıdır
+     
+     KART TİPLERİ:
+     ------------
+     1. HERO KARTLARI: Sayfa başlıkları (hero-card)
+     2. STATİK KARTLAR: Sabit içerik (detail-card)
+     3. DATA-DRIVEN KARTLAR: window.EXPLORER_DATA'dan veri alır
+     
+     SIRALAMA:
+     ---------
+     Kartlar şu sırayla düzenlenmiştir:
+     1. Hero kartları (alfabetik)
+     2. Statik içerik kartları (alfabetik)
+     3. Data-driven kartlar (alfabetik)
+     
      ===================================================== */
      
 /* =====================================================
-   CARD: HERO (EXPLORER)
+   📌 KART: HERO (EXPLORER)
+   =====================================================
+   
+   AÇIKLAMA:
+   Explorer sayfası için hero kartı. Sayfa başlığı ve
+   kısa açıklama içerir.
+   
+   KULLANIM:
+   cardLoader.renderInto("hero-root", ["heroExplorer"]);
+   
+   CSS SINIFLARI:
+   - card: Temel kart stili
+   - hero-card: Hero kartı için özel gradient arka plan
+   - hero-top: Üst kısım (logo + home icon)
+   - hero-logo-box: Logo ve domain yazısı container'ı
+   - hero-domain: Domain yazısı (almanya101.de)
+   - home-icon: Ana sayfaya dönüş butonu
+   
    ===================================================== */
 register("heroExplorer", () => `
   <div id="hero" class="card hero-card">
@@ -149,8 +263,17 @@ register("heroExplorer", () => `
 
 
   /* =====================================================
-     CARD: HERO (RECRUITER)
-     ===================================================== */
+   📌 KART: HERO (RECRUITER)
+   =====================================================
+   
+   AÇIKLAMA:
+   İşe alım uzmanları için özel hero kartı. Profil
+   değerlendirmesi için gerekli bilgilere yönlendirme yapar.
+   
+   KULLANIM:
+   cardLoader.renderInto("hero-root", ["heroRecruiter"]);
+   
+   ===================================================== */
   register("heroRecruiter", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
@@ -173,8 +296,19 @@ register("heroExplorer", () => `
 
 
  /* =====================================================
-     CARD: HERO (ALIEN)
-     ===================================================== */
+   📌 KART: HERO (ALIEN)
+   =====================================================
+   
+   AÇIKLAMA:
+   Alien/meraklı ziyaretçiler için hero kartı. Farklı
+   perspektiflerden içerik keşfetmek için kullanılır.
+   
+   KULLANIM:
+   cardLoader.renderInto("hero-root", ["heroAlien"]);
+   
+   NOT: Bu kart haberler.html sayfasında kullanılıyor.
+   
+   ===================================================== */
   register("heroAlien", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
@@ -198,8 +332,17 @@ register("heroExplorer", () => `
 
 
   /* =====================================================
-     CARD: HERO (COLLEAGUE)
-     ===================================================== */
+   📌 KART: HERO (COLLEAGUE)
+   =====================================================
+   
+   AÇIKLAMA:
+   Meslektaşlar için özel hero kartı. İş ortamında
+   çalışan profesyonellere yönelik içerik sunar.
+   
+   KULLANIM:
+   cardLoader.renderInto("hero-root", ["heroColleague"]);
+   
+   ===================================================== */
   register("heroColleague", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
@@ -226,8 +369,17 @@ register("heroExplorer", () => `
   /* END of block: Card Template — heroColleague */
 
   /* =====================================================
-     CARD: HERO (CURIOUS)
-     ===================================================== */
+   📌 KART: HERO (CURIOUS)
+   =====================================================
+   
+   AÇIKLAMA:
+   Meraklı ziyaretçiler için hero kartı. Genel bilgi
+   ve içerik keşfi için kullanılır.
+   
+   KULLANIM:
+   cardLoader.renderInto("hero-root", ["heroCurious"]);
+   
+   ===================================================== */
   register("heroCurious", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
@@ -256,9 +408,26 @@ register("heroExplorer", () => `
 
 
  /* =====================================================
-   CARD: CV
-   - Two clean CTA blocks (EN/DE)
-   - Keeps your existing CSS, only adds small inline styling
+   📌 KART: CV (ÖZGEÇMİŞ)
+   =====================================================
+   
+   AÇIKLAMA:
+   İngilizce ve Almanca CV dosyalarına link veren statik kart.
+   İki dilde PDF indirme seçeneği sunar.
+   
+   KULLANIM:
+   cardLoader.renderInto("cards-root", ["cv"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-1: Mavi renk teması (resmi, güven)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   - btn-icon: Home ve Up butonları için icon stili
+   
+   VERİ KAYNAĞI:
+   - Statik (hardcoded linkler)
+   - Google Drive PDF linkleri kullanılıyor
+   
    ===================================================== */
 register("cv", () => `
   <div id="cv" class="detail-card card-color-1">
@@ -310,7 +479,24 @@ register("cv", () => `
 
 
   /* =====================================================
-   CARD: ACHIEVEMENTS
+   📌 KART: ACHIEVEMENTS (BAŞARILAR)
+   =====================================================
+   
+   AÇIKLAMA:
+   Kariyer başarılarını listeleyen statik kart. Emoji'li
+   madde işaretleri ile görsel olarak zenginleştirilmiş.
+   
+   KULLANIM:
+   cardLoader.renderInto("cards-root", ["achievements"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-2: Yeşil renk teması (pozitif, sonuç)
+   - ach-list: Başarı listesi için özel stil (ubt-shared.css)
+   
+   VERİ KAYNAĞI:
+   - Statik (hardcoded liste)
+   
    ===================================================== */
 register("achievements", () => `
   <div id="achievements" class="detail-card card-color-2">
@@ -344,7 +530,25 @@ register("achievements", () => `
 
 
   /* =====================================================
-   CARD: TECH STACK
+   📌 KART: TECH STACK (TEKNOLOJİ YIĞINI)
+   =====================================================
+   
+   AÇIKLAMA:
+   Kullanılan teknolojileri kategorilere ayırarak gösteren
+   statik kart. Otomasyon, programlama dilleri, API testleri
+   vb. bölümlere ayrılmış.
+   
+   KULLANIM:
+   cardLoader.renderInto("cards-root", ["techStack"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-3: Turuncu renk teması (enerji, hareket)
+   - tech-section: Teknoloji bölümleri için container
+   
+   VERİ KAYNAĞI:
+   - Statik (hardcoded liste)
+   
    ===================================================== */
 register("techStack", () => `
   <div id="tech" class="detail-card card-color-3">
@@ -386,7 +590,31 @@ register("techStack", () => `
 
 
   /* =====================================================
-   CARD: EXPERIENCE
+   📌 KART: EXPERIENCE (DENEYİM)
+   =====================================================
+   
+   AÇIKLAMA:
+   İş deneyimlerini kronolojik sırayla (en yeni üstte)
+   gösteren detaylı statik kart. Her iş yeri için logo,
+   pozisyon, şirket, tarih ve görev listesi içerir.
+   
+   KULLANIM:
+   cardLoader.renderInto("cards-root", ["experience"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-4: Mor renk teması (kıdem, derinlik)
+   - exp-section: Her iş deneyimi için bölüm
+   - exp-header: Logo ve başlık container'ı
+   - exp-logo: Şirket logosu
+   - exp-role: Pozisyon başlığı
+   - exp-company: Şirket adı
+   - exp-sub: Tarih ve lokasyon
+   - exp-list: Görev listesi
+   
+   VERİ KAYNAĞI:
+   - Statik (hardcoded liste)
+   
    ===================================================== */
 register("experience", () => `
   <div id="experience" class="detail-card card-color-4">
@@ -504,7 +732,27 @@ register("experience", () => `
 
 
   /* =====================================================
-   CARD: CORPORATE PROJECTS
+   📌 KART: CORPORATE PROJECTS (KURUMSAL PROJELER)
+   =====================================================
+   
+   AÇIKLAMA:
+   Kurumsal projeleri logo ve açıklamalarla gösteren
+   statik kart. Her proje için görsel ve detaylı bilgi içerir.
+   
+   KULLANIM:
+   cardLoader.renderInto("cards-root", ["corporateProjects"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-5: Sarı renk teması (dikkat, vurgu)
+   - proj-wrapper: Proje listesi container'ı
+   - proj-item: Her proje için item
+   - proj-logo: Proje logosu
+   - proj-title: Proje başlığı
+   
+   VERİ KAYNAĞI:
+   - Statik (hardcoded liste)
+   
    ===================================================== */
 register("corporateProjects", () => `
   <div id="projects-corporate" class="detail-card card-color-5">
@@ -617,7 +865,27 @@ register("corporateProjects", () => `
 
 
   /* =====================================================
-   CARD: PRIVATE PROJECTS
+   📌 KART: PRIVATE PROJECTS (KİŞİSEL PROJELER)
+   =====================================================
+   
+   AÇIKLAMA:
+   Kişisel/hobi projelerini gösteren statik kart. Logo
+   ve açıklamalarla her projeyi detaylandırır.
+   
+   KULLANIM:
+   cardLoader.renderInto("cards-root", ["privateProjects"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-1: Mavi renk teması (resmi, güven)
+   - proj-wrapper: Proje listesi container'ı
+   - proj-item: Her proje için item
+   - proj-logo: Proje logosu
+   - proj-title: Proje başlığı
+   
+   VERİ KAYNAĞI:
+   - Statik (hardcoded liste)
+   
    ===================================================== */
 register("privateProjects", () => `
   <div id="projects-private" class="detail-card card-color-1">
@@ -756,7 +1024,27 @@ register("privateProjects", () => `
 
 
  /* =====================================================
-   CARD: CONTACT
+   📌 KART: CONTACT (İLETİŞİM)
+   =====================================================
+   
+   AÇIKLAMA:
+   İletişim bilgilerini icon grid formatında gösteren
+   statik kart. WhatsApp, LinkedIn, Instagram, Email,
+   Telefon, Konum gibi kanalları içerir.
+   
+   KULLANIM:
+   cardLoader.renderInto("cards-root", ["contact"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-2: Yeşil renk teması (pozitif, sonuç)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   
+   VERİ KAYNAĞI:
+   - Statik (hardcoded linkler ve iconlar)
+   
+   NOT: Iconlar hover efekti ile interaktif hale getirilmiş.
+   
    ===================================================== */
 register("contact", () => `
   <div id="contact" class="detail-card card-color-2">
@@ -923,7 +1211,24 @@ register("contact", () => `
 
 
 /* =====================================================
-   CARD: ABOUT ME
+   📌 KART: ABOUT ME (HAKKIMDA)
+   =====================================================
+   
+   AÇIKLAMA:
+   Kişisel profil bilgilerini gösteren statik kart.
+   Profil fotoğrafı ve kısa açıklama içerir.
+   
+   KULLANIM:
+   cardLoader.renderInto("cards-root", ["aboutme"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-3: Turuncu renk teması (enerji, hareket)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   
+   VERİ KAYNAĞI:
+   - Statik (hardcoded içerik)
+   
    ===================================================== */
 register("aboutme", () => `
   <div id="aboutme" class="detail-card card-color-3">
@@ -972,7 +1277,24 @@ register("aboutme", () => `
 /* END of block: Card Template — aboutme */
 
 /* =====================================================
-   CARD: SUPPORT
+   📌 KART: SUPPORT (DESTEK)
+   =====================================================
+   
+   AÇIKLAMA:
+   Destek ve yardım mesajı içeren statik kart. Kullanıcılara
+   ulaşılabilir olduğunu ve yardıma hazır olduğunu belirtir.
+   
+   KULLANIM:
+   cardLoader.renderInto("cards-root", ["support"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-5: Sarı renk teması (dikkat, vurgu)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   
+   VERİ KAYNAĞI:
+   - Statik (hardcoded içerik)
+   
    ===================================================== */
 register("support", () => `
   <div id="support" class="detail-card card-color-5">
@@ -1022,7 +1344,24 @@ register("support", () => `
 
 
 /* =====================================================
-   CARD: GLOBAL WARMING
+   📌 KART: GLOBAL WARMING (KÜRESEL ISINMA)
+   =====================================================
+   
+   AÇIKLAMA:
+   Küresel ısınma hakkında bilgilendirici içerik gösteren
+   statik kart. Görsel ve açıklayıcı metin içerir.
+   
+   KULLANIM:
+   cardLoader.renderInto("cards-root", ["globalwarming"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-3: Turuncu renk teması (enerji, hareket)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   
+   VERİ KAYNAĞI:
+   - Statik (hardcoded içerik)
+   
    ===================================================== */
 register("globalwarming", () => `
   <div id="globalwarming" class="detail-card card-color-3">
@@ -1073,8 +1412,44 @@ register("globalwarming", () => `
 
 
 /* =====================================================
-   CARD: ARTICLES (DATA-DRIVEN)
-   - expects: window.ARTICLES_DATA = [{ title,date,img,href,text }]
+   📌 KART: ARTICLES (MAKALELER) - DATA-DRIVEN
+   =====================================================
+   
+   AÇIKLAMA:
+   Makaleleri dinamik olarak gösteren data-driven kart.
+   window.EXPLORER_DATA.articles array'inden veri alır.
+   
+   KULLANIM:
+   1. explorer-data.js içinde veriyi hazırla:
+      window.EXPLORER_DATA = {
+        articles: [
+          {
+            title: "Makale Başlığı",
+            date: "01-01-2025",
+            img: "/img/article.jpg",
+            href: "https://...",
+            text: "Makale içeriği..."
+          }
+        ]
+      };
+   
+   2. Sayfada kartı göster:
+      cardLoader.renderInto("cards-root", ["articles"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-3: Turuncu renk teması (enerji, hareket)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   
+   VERİ FORMATI:
+   - title: Makale başlığı (string, zorunlu)
+   - date: Tarih (string, opsiyonel)
+   - img: Görsel URL (string, opsiyonel)
+   - href: Link URL (string, opsiyonel)
+   - text: İçerik metni (string, \n\n ile paragraflar ayrılır)
+   
+   NOT: Eğer veri yoksa "No articles yet." mesajı gösterilir.
+   
    ===================================================== */
 register("articles", () => {
   const items = (window.EXPLORER_DATA && window.EXPLORER_DATA.articles) || [];
@@ -1161,7 +1536,15 @@ register("articles", () => {
 /* END of block: Card Template — articles */
 
 /* =====================================================
-   CARD: HERO (ARTICLES)
+   📌 KART: HERO (ARTICLES)
+   =====================================================
+   
+   AÇIKLAMA:
+   Makaleler sayfası için hero kartı.
+   
+   KULLANIM:
+   cardLoader.renderInto("hero-root", ["heroArticles"]);
+   
    ===================================================== */
 register("heroArticles", () => `
   <div id="hero" class="card hero-card">
@@ -1183,7 +1566,15 @@ register("heroArticles", () => `
 /* END of block: Card Template — heroArticles */
 
 /* =====================================================
-   CARD: HERO (BOOKMARKS)
+   📌 KART: HERO (BOOKMARKS)
+   =====================================================
+   
+   AÇIKLAMA:
+   Yer imleri sayfası için hero kartı.
+   
+   KULLANIM:
+   cardLoader.renderInto("hero-root", ["heroBookmarks"]);
+   
    ===================================================== */
 register("heroBookmarks", () => `
   <div id="hero" class="card hero-card">
@@ -1209,8 +1600,42 @@ register("heroBookmarks", () => `
 
 
 /* =====================================================
-   CARD: BOOKMARKS (DATA-DRIVEN)
-   - reads: window.EXPLORER_DATA.bookmarks = [{ title, img, href, note }]
+   📌 KART: BOOKMARKS (YER İMLERİ) - DATA-DRIVEN
+   =====================================================
+   
+   AÇIKLAMA:
+   Yer imlerini dinamik olarak gösteren data-driven kart.
+   window.EXPLORER_DATA.bookmarks array'inden veri alır.
+   
+   KULLANIM:
+   1. explorer-data.js içinde veriyi hazırla:
+      window.EXPLORER_DATA = {
+        bookmarks: [
+          {
+            title: "Site Adı",
+            img: "/img/logo.jpg",
+            href: "https://...",
+            note: "Açıklama notu"
+          }
+        ]
+      };
+   
+   2. Sayfada kartı göster:
+      cardLoader.renderInto("cards-root", ["bookmarks"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-1: Mavi renk teması (resmi, güven)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   
+   VERİ FORMATI:
+   - title: Site başlığı (string, zorunlu)
+   - img: Logo/görsel URL (string, opsiyonel)
+   - href: Link URL (string, opsiyonel)
+   - note: Açıklama notu (string, opsiyonel)
+   
+   NOT: Eğer veri yoksa "No bookmarks yet." mesajı gösterilir.
+   
    ===================================================== */
 register("bookmarks", () => {
   const items = (window.EXPLORER_DATA && window.EXPLORER_DATA.bookmarks) || [];
@@ -1332,8 +1757,41 @@ register("bookmarks", () => {
 
 
 /* =====================================================
-   START: INSIGHTS INIT (GLOBAL) — card-loader.js
-   Purpose: Runs after cards render (scripts inside templates won't execute)
+   📌 FONKSİYON: INSIGHTS INIT (GLOBAL)
+   =====================================================
+   
+   AÇIKLAMA:
+   Insights kartı için veri çeken global fonksiyon.
+   Kart render edildikten SONRA manuel olarak çağrılmalıdır
+   çünkü template içindeki <script> tagları çalışmaz.
+   
+   KULLANIM:
+   1. Sayfada insights kartını göster:
+      cardLoader.renderInto("cards-root", ["insights"]);
+   
+   2. Sayfa yüklendikten sonra veriyi çek:
+      window.ubtInitInsights(30); // Son 30 gün
+   
+   PARAMETRELER:
+   - days: Kaç günlük veri gösterilecek (varsayılan: 30)
+   
+   API ENDPOINT:
+   - /api/insights?days=30
+   
+   VERİ FORMATI:
+   {
+     rangeDays: 30,
+     start: "2025-01-01",
+     end: "2025-01-31",
+     toprefs: [{ name: "...", count: 10 }],
+     browsers: [{ name: "...", count: 5 }],
+     systems: [{ name: "...", count: 3 }],
+     locations: [{ name: "...", count: 2 }],
+     sizes: [{ name: "...", count: 1 }]
+   }
+   
+   NOT: Hata durumunda "No data." mesajı gösterilir.
+   
    ===================================================== */
 
 window.ubtInitInsights = async function (days = 30) {
@@ -1410,7 +1868,16 @@ window.ubtInitInsights = async function (days = 30) {
 
 
    /* =====================================================
-   START: CARD: HERO (INSIGHTS) — add to card-loader.js
+   📌 KART: HERO (INSIGHTS)
+   =====================================================
+   
+   AÇIKLAMA:
+   Insights sayfası için hero kartı. GoatCounter istatistikleri
+   için başlık görevi görür.
+   
+   KULLANIM:
+   cardLoader.renderInto("hero-root", ["heroInsights"]);
+   
    ===================================================== */
 register("heroInsights", () => `
   <div id="hero" class="card hero-card">
@@ -1437,8 +1904,33 @@ register("heroInsights", () => `
 
 
    /* =====================================================
-   START: CARD: INSIGHTS — card-loader.js
-   Purpose: UI only (no <script> inside template)
+   📌 KART: INSIGHTS (TRAFİK İSTATİSTİKLERİ) - DATA-DRIVEN
+   =====================================================
+   
+   AÇIKLAMA:
+   GoatCounter trafik istatistiklerini gösteren data-driven kart.
+   Veri API'den çekilir ve window.ubtInitInsights() ile yüklenir.
+   
+   KULLANIM:
+   1. Sayfada kartı göster:
+      cardLoader.renderInto("cards-root", ["insights"]);
+   
+   2. Sayfa yüklendikten sonra veriyi çek:
+      window.ubtInitInsights(30); // Son 30 gün
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-1: Mavi renk teması (resmi, güven)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   - insights-box: İstatistik verilerinin gösterildiği container
+   
+   VERİ KAYNAĞI:
+   - API: /api/insights?days=30
+   - window.ubtInitInsights() fonksiyonu ile yüklenir
+   
+   NOT: Template içinde <script> tagı çalışmaz, bu yüzden
+        veri yükleme işlemi sayfa script'inde yapılmalıdır.
+   
    ===================================================== */
 
 register("insights", () => `
@@ -1469,9 +1961,49 @@ register("insights", () => `
 
 
 /* =====================================================
-   CARD: UPDATES / NEWS (DATA-DRIVEN – TEXT ONLY + LINK)
-   - Date format in data: DD-MM-YYYY (e.g. 12-12-2025)
-   - Latest on top (pinned first)
+   📌 KART: UPDATES / NEWS (GÜNCELLEMELER / HABERLER) - DATA-DRIVEN
+   =====================================================
+   
+   AÇIKLAMA:
+   Haberler ve güncellemeleri gösteren data-driven kart.
+   window.EXPLORER_DATA.updates array'inden veri alır.
+   Pinned (sabitleme) özelliği ve tarih sıralaması destekler.
+   
+   KULLANIM:
+   1. explorer-data.js içinde veriyi hazırla:
+      window.EXPLORER_DATA = {
+        updates: [
+          {
+            pinned: true,  // Üstte sabitlenir
+            title: "Önemli Haber",
+            date: "12-12-2025",  // DD-MM-YYYY formatı
+            text: "Haber içeriği...",
+            href: "https://..."  // Opsiyonel link
+          }
+        ]
+      };
+   
+   2. Sayfada kartı göster:
+      cardLoader.renderInto("cards-root", ["updates"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-3: Turuncu renk teması (enerji, hareket)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   
+   VERİ FORMATI:
+   - pinned: Boolean, true ise en üstte gösterilir
+   - title: Haber başlığı (string, zorunlu)
+   - date: Tarih (string, DD-MM-YYYY formatı, opsiyonel)
+   - text: İçerik metni (string, \n ile satırlar ayrılır, opsiyonel)
+   - href: Link URL (string, opsiyonel)
+   
+   SIRALAMA:
+   - Önce pinned: true olanlar
+   - Sonra tarihe göre (en yeni üstte)
+   
+   NOT: Eğer veri yoksa "Simdilik haber yok!" mesajı gösterilir.
+   
    ===================================================== */
 register("updates", () => {
   const itemsRaw = (window.EXPLORER_DATA && window.EXPLORER_DATA.updates) || [];
@@ -1589,8 +2121,17 @@ register("updates", () => {
 
 
 /* =====================================================
-   CARD: HERO (TOOLS)
-===================================================== */
+   📌 KART: HERO (TOOLS)
+   =====================================================
+   
+   AÇIKLAMA:
+   Araçlar sayfası için hero kartı. UBT tarafından geliştirilen
+   araçları tanıtır.
+   
+   KULLANIM:
+   cardLoader.renderInto("hero-root", ["heroTools"]);
+   
+   ===================================================== */
 
 register("heroTools", () => `
   <div id="hero" class="card hero-card">
@@ -1618,7 +2159,15 @@ and some are just cool things you can say
 /* END of block: Card Template — heroTools */
 
 /* =====================================================
-   CARD: HERO (USEFUL APPS)
+   📌 KART: HERO (USEFUL APPS)
+   =====================================================
+   
+   AÇIKLAMA:
+   Faydalı uygulamalar sayfası için hero kartı.
+   
+   KULLANIM:
+   cardLoader.renderInto("hero-root", ["heroApps"]);
+   
    ===================================================== */
 register("heroApps", () => `
   <div id="hero" class="card hero-card">
@@ -1641,7 +2190,42 @@ register("heroApps", () => `
 
 
 /* =====================================================
-   CARD: USEFUL APPS (DATA-DRIVEN)
+   📌 KART: USEFUL APPS (FAYDALI UYGULAMALAR) - DATA-DRIVEN
+   =====================================================
+   
+   AÇIKLAMA:
+   Faydalı uygulamaları gösteren data-driven kart.
+   window.EXPLORER_DATA.apps array'inden veri alır.
+   
+   KULLANIM:
+   1. explorer-data.js içinde veriyi hazırla:
+      window.EXPLORER_DATA = {
+        apps: [
+          {
+            title: "Uygulama Adı",
+            img: "/img/app.jpg",
+            href: "https://...",
+            note: "Açıklama notu"
+          }
+        ]
+      };
+   
+   2. Sayfada kartı göster:
+      cardLoader.renderInto("cards-root", ["apps"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-4: Mor renk teması (kıdem, derinlik)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   
+   VERİ FORMATI:
+   - title: Uygulama adı (string, zorunlu)
+   - img: Logo/görsel URL (string, zorunlu)
+   - href: Link URL (string, zorunlu)
+   - note: Açıklama notu (string, zorunlu)
+   
+   NOT: Eğer veri yoksa "No apps yet." mesajı gösterilir.
+   
    ===================================================== */
 register("apps", () => {
   const data = (window.EXPLORER_DATA && Array.isArray(window.EXPLORER_DATA.apps))
@@ -1716,7 +2300,42 @@ register("apps", () => {
 /* END of block: Card Template — apps */
 
 /* =====================================================
-   CARD: TOOLS (DATA-DRIVEN)
+   📌 KART: TOOLS (ARAÇLAR) - DATA-DRIVEN
+   =====================================================
+   
+   AÇIKLAMA:
+   Geliştirilen araçları gösteren data-driven kart.
+   window.EXPLORER_DATA.tools array'inden veri alır.
+   
+   KULLANIM:
+   1. explorer-data.js içinde veriyi hazırla:
+      window.EXPLORER_DATA = {
+        tools: [
+          {
+            title: "Araç Adı",
+            img: "/img/tool.jpg",
+            href: "https://...",
+            note: "Açıklama notu"
+          }
+        ]
+      };
+   
+   2. Sayfada kartı göster:
+      cardLoader.renderInto("cards-root", ["tools"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-3: Turuncu renk teması (enerji, hareket)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   
+   VERİ FORMATI:
+   - title: Araç adı (string, zorunlu)
+   - img: Logo/görsel URL (string, zorunlu)
+   - href: Link URL (string, zorunlu)
+   - note: Açıklama notu (string, zorunlu)
+   
+   NOT: Eğer veri yoksa "No tools yet." mesajı gösterilir.
+   
    ===================================================== */
 register("tools", () => {
   const data = (window.EXPLORER_DATA && Array.isArray(window.EXPLORER_DATA.tools))
@@ -1823,38 +2442,32 @@ register("tools", () => {
 
 
    /* =====================================================
-     CARD: HERO (QAENGINEER)
+     ⚠️ DUPLICATE KART: HERO (QAENGINEER) - KALDIRILMALI
+     =====================================================
+     
+     NOT: Bu kart yukarıda zaten tanımlanmış. Bu duplicate
+     versiyon kaldırılmalı veya birleştirilmelidir.
+     
      ===================================================== */
-  register("heroQaengineer", () => `
-    <div id="hero" class="card hero-card">
-      <div class="hero-top">
-        <div class="hero-logo-box">
-          <img src="/img/logoubt.png" class="hero-logo" alt="UBT logo" />
-          <span class="hero-domain">ubterzioglu.de</span>
-        </div>
-        <a href="index.html">
-          <img src="/img/z0cliphome.png" class="home-icon" alt="Home" />
-        </a>
-      </div>
-
-      <h1>Hello QA Engineer!</h1>
-      <p class="title">
-  What do you need?<br>
-  Support? Information?<br>Z
-  Getting to know me better?<br>
-  Articles? Useful links?<br>
-  Choose a section below to explore!<br>
-</p>
-    </div>
-   
-  `);
-  /* END of block: Card Template — heroCurious */
 
 
 
      /* =====================================================
-     CARD: HERO (HABERLER)
-     ===================================================== */
+   📌 KART: HERO (HABERLER)
+   =====================================================
+   
+   AÇIKLAMA:
+   Haberler sayfası için hero kartı. Almanya, Avrupa ve
+   Dünya'dan güncel haberleri tanıtır.
+   
+   KULLANIM:
+   cardLoader.renderInto("hero-root", ["heroDontknow"]);
+   
+   NOT: Kart adı "heroDontknow" olarak kalmış, "heroHaberler"
+        olarak değiştirilebilir (backward compatibility için
+        şimdilik bırakıldı).
+   
+   ===================================================== */
   register("heroDontknow", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
@@ -1894,10 +2507,33 @@ register("tools", () => {
 
 /* =====================================================
      4) PUBLIC API (window.cardLoader)
+     =====================================================
+     
+     Bu bölüm, card-loader.js'i dışarıdan kullanılabilir
+     hale getirir. window.cardLoader objesi üzerinden
+     register() ve renderInto() fonksiyonlarına erişilir.
+     
+     KULLANIM:
+     - window.cardLoader.register(name, templateFn)
+     - window.cardLoader.renderInto(rootId, cardNames)
+     
+     NOT: Bu API sayesinde sayfalar kartları dinamik olarak
+          yükleyebilir ve özelleştirebilir.
+     
      ===================================================== */
   window.cardLoader = { register, renderInto };
 })();
-/* END of file: card-loader.js */
+/* =====================================================
+   ✅ DOSYA SONU: card-loader.js
+   =====================================================
+   
+   Toplam kart sayısı: ~30
+   - Hero kartları: ~10
+   - Statik kartlar: ~8
+   - Data-driven kartlar: ~12
+   
+   Son güncelleme: 2025-01-26
+   ===================================================== */
 
 
 
@@ -1907,9 +2543,27 @@ register("tools", () => {
 
 
 /* =====================================================
-   CARD: HABERLER (DATA-DRIVEN – TEXT ONLY + LINK)
-   - Date format in data: DD-MM-YYYY (e.g. 12-12-2025)
-   - Latest on top (pinned first)
+   📌 KART: HABERLER (HABERLER) - DATA-DRIVEN
+   =====================================================
+   
+   AÇIKLAMA:
+   Haberler kartı. window.EXPLORER_DATA.updates array'ini
+   kullanır (updates kartı ile aynı veri kaynağı).
+   
+   KULLANIM:
+   cardLoader.renderInto("cards-root", ["haberler"]);
+   
+   CSS SINIFI:
+   - detail-card: İçerik kartı temel stili
+   - card-color-3: Turuncu renk teması (enerji, hareket)
+   - card-buttons: Üst sağdaki navigasyon butonları
+   
+   VERİ KAYNAĞI:
+   - window.EXPLORER_DATA.updates (updates kartı ile aynı)
+   
+   NOT: Bu kart "updates" kartının Türkçe versiyonudur.
+        Aynı veri kaynağını kullanır.
+   
    ===================================================== */
 register("haberler", () => {
   const itemsRaw = (window.EXPLORER_DATA && window.EXPLORER_DATA.updates) || [];
