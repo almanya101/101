@@ -130,8 +130,8 @@ register("heroExplorer", () => `
   <div id="hero" class="card hero-card">
     <div class="hero-top">
       <div class="hero-logo-box">
-        <img src="/img/logoubt.png" class="hero-logo" alt="UBT logo" />
-        <span class="hero-domain">ubterzioglu.de</span>
+        <img src="/img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+        <span class="hero-domain">almanya101.de</span>
       </div>
       <a href="index.html">
         <img src="/img/z0cliphome.png" class="home-icon" alt="Home" />
@@ -155,8 +155,8 @@ register("heroExplorer", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
         <div class="hero-logo-box">
-          <img src="/img/logoubt.png" class="hero-logo" alt="UBT logo" />
-          <span class="hero-domain">ubterzioglu.de</span>
+          <img src="/img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+          <span class="hero-domain">almanya101.de</span>
         </div>
         <a href="index.html">
           <img src="/img/z0cliphome.png" class="home-icon" alt="Home" />
@@ -179,8 +179,8 @@ register("heroExplorer", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
         <div class="hero-logo-box">
-          <img src="/img/logoubt.png" class="hero-logo" alt="UBT logo" />
-          <span class="hero-domain">ubterzioglu.de</span>
+          <img src="/img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+          <span class="hero-domain">almanya101.de</span>
         </div>
         <a href="index.html">
           <img src="/img/z0cliphome.png" class="home-icon" alt="Home" />
@@ -204,8 +204,8 @@ register("heroExplorer", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
         <div class="hero-logo-box">
-          <img src="/img/logoubt.png" class="hero-logo" alt="UBT logo" />
-          <span class="hero-domain">ubterzioglu.de</span>
+          <img src="/img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+          <span class="hero-domain">almanya101.de</span>
         </div>
         <a href="index.html">
           <img src="/img/z0cliphome.png" class="home-icon" alt="Home" />
@@ -232,8 +232,8 @@ register("heroExplorer", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
         <div class="hero-logo-box">
-          <img src="/img/logoubt.png" class="hero-logo" alt="UBT logo" />
-          <span class="hero-domain">ubterzioglu.de</span>
+          <img src="/img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+          <span class="hero-domain">almanya101.de</span>
         </div>
         <a href="index.html">
           <img src="/img/z0cliphome.png" class="home-icon" alt="Home" />
@@ -1167,8 +1167,8 @@ register("heroArticles", () => `
   <div id="hero" class="card hero-card">
     <div class="hero-top">
       <div class="hero-logo-box">
-        <img src="/img/logoubt.png" class="hero-logo" alt="UBT logo" />
-        <span class="hero-domain">ubterzioglu.de</span>
+        <img src="/img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+        <span class="hero-domain">almanya101.de</span>
       </div>
       <a href="index.html">
         <img src="/img/z0cliphome.png" class="home-icon" alt="Home" />
@@ -1189,11 +1189,11 @@ register("heroBookmarks", () => `
   <div id="hero" class="card hero-card">
     <div class="hero-top">
       <div class="hero-logo-box">
-        <img src="img/logoubt.png" class="hero-logo" alt="UBT logo" />
-        <span class="hero-domain">ubterzioglu.de</span>
+        <img src="/img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+        <span class="hero-domain">almanya101.de</span>
       </div>
       <a href="index.html">
-        <img src="img/z0cliphome.png" class="home-icon" alt="Home" />
+        <img src="/img/z0cliphome.png" class="home-icon" alt="Home" />
       </a>
     </div>
 
@@ -1596,8 +1596,8 @@ register("heroTools", () => `
   <div id="hero" class="card hero-card">
     <div class="hero-top">
       <div class="hero-logo-box">
-        <img src="/img/logoubt.png" class="hero-logo" alt="UBT logo" />
-        <span class="hero-domain">ubterzioglu.de</span>
+        <img src="/img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+        <span class="hero-domain">almanya101.de</span>
       </div>
       <a href="index.html">
         <img src="/img/z0cliphome.png" class="home-icon" alt="Home" />
@@ -1610,7 +1610,7 @@ Here you can find tools I built as hobby projects.
 They are made to be fun and useful in daily life.  
 Some help you make decisions, some save time,  
 and some are just cool things you can say  
-“Hey, look what I found!” and show to your friends.
+"Hey, look what I found!" and show to your friends.
 </p>
   </div>
   <!-- END of block: Hero (Tools) -->
@@ -1624,8 +1624,8 @@ register("heroApps", () => `
   <div id="hero" class="card hero-card">
     <div class="hero-top">
       <div class="hero-logo-box">
-        <img src="/img/logoubt.png" class="hero-logo" alt="UBT logo" />
-        <span class="hero-domain">ubterzioglu.de</span>
+        <img src="/img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+        <span class="hero-domain">almanya101.de</span>
       </div>
       <a href="index.html">
         <img src="/img/z0cliphome.png" class="home-icon" alt="Home" />
@@ -1800,8 +1800,8 @@ register("tools", () => {
     <div id="hero" class="card hero-card">
       <div class="hero-top">
         <div class="hero-logo-box">
-          <img src="/img/logoubt.png" class="hero-logo" alt="UBT logo" />
-          <span class="hero-domain">ubterzioglu.de</span>
+          <img src="/img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+          <span class="hero-domain">almanya101.de</span>
         </div>
         <a href="index.html">
           <img src="/img/z0cliphome.png" class="home-icon" alt="Home" />

@@ -105,7 +105,7 @@ body {
 }
 
 .hero-logo { width:48px; height:48px; border-radius:50%; }
-.hero-domain { font-size:16px; font-weight:600; color:white; }
+.hero-domain { font-size:32px; font-weight:600; color:white; }
 .hero-logo-box { display:flex; align-items:center; gap:8px; }
 
 /* Home icon in hero */
@@ -169,7 +169,7 @@ body {
 }
 
 .hero-logo1 { width:48px; height:48px; border-radius:50%; }
-.hero-domain1 { font-size:16px; font-weight:600; color:white; }
+.hero-domain1 { font-size:32px; font-weight:600; color:white; }
 .hero-logo-box1 { display:flex; align-items:center; gap:8px; }
 
 

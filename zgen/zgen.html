@@ -6,10 +6,11 @@
   ========================================================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ZGEN – Generation Finder</title>
+  <title>ZGEN – Nesil Bulucu</title>
 
-  <link rel="canonical" href="https://ubterzioglu.de/zgen/zgen.html" />
-  <meta name="description" content="Enter your birth year and instantly see your generation, core traits, and how to get along with other generations. Runs entirely in your browser." />
+  <link rel="canonical" href="https://almanya101.de/zgen/zgen.html" />
+  <link rel="icon" type="image/png" href="/img/headericon.png" />
+  <meta name="description" content="Doğum yılınızı girin ve neslinizi, özelliklerinizi ve diğer nesillerle nasıl anlaşacağınızı anında görün. Tamamen tarayıcınızda çalışır." />
   <meta name="robots" content="index,follow" />
 
   <!-- Standalone CSS -->
@@ -57,8 +58,8 @@
         <div class="hero-left">
           <h1 class="title">ZGEN</h1>
           <p class="subtitle">
-            Enter your birth year and instantly see your generation, traits, and how to get along with other generations.
-            No signup. No data stored. Runs locally in your browser.
+            Doğum yılınızı girin ve neslinizi, özelliklerinizi ve diğer nesillerle nasıl anlaşacağınızı anında görün.
+            Kayıt yok. Veri saklanmaz. Tamamen tarayıcınızda çalışır.
           </p>
         </div>
 
@@ -70,7 +71,7 @@
             <span class="dot dot-purple" title="#8F03B7"></span>
             <span class="dot dot-yellow" title="#FFBB00"></span>
           </div>
-          <div class="pill" id="statusPill">Waiting for birth year…</div>
+          <div class="pill" id="statusPill">Doğum yılı bekleniyor…</div>
         </div>
       </header>
 
@@ -79,24 +80,24 @@
         <!-- CARD 1: INPUT -->
         <section class="card card-blue" aria-labelledby="c1">
           <div class="card-head">
-            <h2 id="c1" class="card-title">1) Birth year</h2>
-            <p class="card-sub">Just one field. No extra questions.</p>
+            <h2 id="c1" class="card-title">1) Doğum yılı</h2>
+            <p class="card-sub">Sadece bir alan. Ekstra soru yok.</p>
           </div>
 
           <div class="input-row">
-            <label class="sr-only" for="birthYear">Birth year</label>
+            <label class="sr-only" for="birthYear">Doğum yılı</label>
             <input
               id="birthYear"
               class="input"
               inputmode="numeric"
-              placeholder="Supported birth years: 1928–2100"
+              placeholder="Desteklenen doğum yılları: 1928–2100"
               maxlength="4"
               autocomplete="off"
             />
-            <button class="btn" id="showBtn" type="button">Show my generation</button>
+            <button class="btn" id="showBtn" type="button">Neslimi göster</button>
           </div>
 
-          <p class="micro"> Tip: Supported birth years: 1928–2100 -  You can also press <kbd>Enter</kbd>.</p>
+          <p class="micro"> İpucu: Desteklenen doğum yılları: 1928–2100 - <kbd>Enter</kbd> tuşuna da basabilirsiniz.</p>
         </section>
 
 
@@ -106,14 +107,14 @@
         <!-- CARD 2: YOU ARE GEN ... -->
         <section class="card card-green" id="youCard" aria-labelledby="c2" hidden>
           <div class="card-head">
-            <h2 id="c2" class="card-title">2) Your generation</h2>
-            <p class="card-sub" id="youGenLine">You are <strong>Gen ?</strong>.</p>
+            <h2 id="c2" class="card-title">2) Nesliniz</h2>
+            <p class="card-sub" id="youGenLine">Siz <strong>? Nesli</strong>siniz.</p>
           </div>
 
           <div class="two-col">
             <!-- LEFT: 10 traits -->
             <div>
-              <h3 class="mini-title" id="traitsTitle">Typical traits</h3>
+              <h3 class="mini-title" id="traitsTitle">Tipik özellikler</h3>
               <ul class="bullets" id="traits10">
                 <!-- rendered by JS -->
               </ul>
@@ -132,8 +133,8 @@
                 </div>
 
                 <div>
-                  <div class="avatar-title" id="avatarTitle">Your vibe</div>
-                  <div class="avatar-sub" id="avatarSub">Short, punchy bullets.</div>
+                  <div class="avatar-title" id="avatarTitle">Havınız</div>
+                  <div class="avatar-sub" id="avatarSub">Kısa, öz maddeler.</div>
                 </div>
               </div>
 
@@ -147,9 +148,9 @@
         <!-- COMPATIBILITY HEADER -->
         <section class="card card-orange" id="compatHeader" aria-labelledby="c3" hidden>
           <div class="card-head">
-            <h2 id="c3" class="card-title">3) Compatibility (optional)</h2>
+            <h2 id="c3" class="card-title">3) Uyumluluk (isteğe bağlı)</h2>
             <p class="card-sub">
-              Tap a card to expand. Do’s & Don’ts are placeholders until you paste real data.
+              Genişletmek için bir karta tıklayın. Yapılacaklar ve Yapılmayacaklar, gerçek veri yapıştırılana kadar yer tutucudur.
             </p>
           </div>
         </section>
@@ -161,8 +162,8 @@
   <!-- CARD 1.5: GENERATION CHART (always shows after typing) -->
 <section class="card card-white genchart" id="genChart" aria-labelledby="cChart">
   <div class="card-head">
-    <h2 id="cChart" class="card-title">Generation chart</h2>
-    <p class="card-sub">Quick reference: names, ranges, and avatars.</p>
+    <h2 id="cChart" class="card-title">Nesil tablosu</h2>
+    <p class="card-sub">Hızlı referans: isimler, aralıklar ve avatarlar.</p>
   </div>
 
   <div class="genchart-grid">
@@ -408,7 +409,7 @@
   card.innerHTML = `
     <button class="acc-head" type="button" aria-expanded="false">
       <div class="acc-title">
-        <span class="acc-kicker">How to get along with</span>
+        <span class="acc-kicker">Nasıl anlaşılır</span>
         <span class="acc-name">${esc(otherGen.name)}</span>
       </div>
       <span class="acc-icon" aria-hidden="true">+</span>
@@ -423,21 +424,21 @@
         ${avatarPairHTML(otherGen, "xl")}
 
         <div class="avatar-tags">
-          <span class="tag">You</span>
+          <span class="tag">Siz</span>
           <span class="tag">${esc(otherGen.name)}</span>
         </div>
       </div>
 
       <div class="acc-cols">
         <div class="dos">
-          <h3 class="mini-title dos-title">✅ Do’s</h3>
+          <h3 class="mini-title dos-title">✅ Yapılacaklar</h3>
           <ul class="bullets">
             ${(content.dos || []).map(x => `<li>${esc(x)}</li>`).join("")}
           </ul>
         </div>
 
         <div class="donts">
-          <h3 class="mini-title donts-title">❌ Don’ts</h3>
+          <h3 class="mini-title donts-title">❌ Yapılmayacaklar</h3>
           <ul class="bullets">
             ${(content.donts || []).map(x => `<li>${esc(x)}</li>`).join("")}
           </ul>
@@ -491,10 +492,10 @@
       const profile = getProfile(gen.id);
 
       if (profile?.traits?.length) {
-        traitsTitle.textContent = "Typical traits";
+        traitsTitle.textContent = "Tipik özellikler";
         renderList(traits10El, profile.traits);
       } else {
-        traitsTitle.textContent = "Typical traits (placeholder)";
+        traitsTitle.textContent = "Tipik özellikler (yer tutucu)";
         renderList(traits10El, [
           "Trait #1 (placeholder)",
           "Trait #2 (placeholder)",
@@ -538,7 +539,7 @@
     year <= 2100;
 
   if (!valid) {
-    statusPill.textContent = "Supported birth years: 1928–2100";
+    statusPill.textContent = "Desteklenen doğum yılları: 1928–2100";
     youCard.hidden = true;
     compatHeader.hidden = true;
     accordions.hidden = true;
@@ -549,15 +550,15 @@
 
   // If data isn't loaded OR ranges are wrong, don't silently fall back
   if (!youGen) {
-    statusPill.textContent = "Supported birth years: 1928–2100";
+    statusPill.textContent = "Desteklenen doğum yılları: 1928–2100";
     youCard.hidden = true;
     compatHeader.hidden = true;
     accordions.hidden = true;
     return;
   }
 
-  statusPill.textContent = `Detected: ${youGen.name}`;
-  youGenLine.innerHTML = `You are <strong>${esc(youGen.name)}</strong>.`;
+  statusPill.textContent = `Tespit edildi: ${youGen.name}`;
+  youGenLine.innerHTML = `Siz <strong>${esc(youGen.name)}</strong>siniz.`;
 
   setYouAvatars(youGen);
   renderProfile(youGen);
