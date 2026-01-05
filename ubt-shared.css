@@ -8,6 +8,53 @@
 /* ---------- Global reset ---------- */
 * { margin:0; padding:0; box-sizing:border-box; }
 
+/* =====================================================
+   🔗 LINK STİLLERİ (LINK STYLES)
+   =====================================================
+   
+   Tüm linkler için tutarlı renk davranışı:
+   - Tıklanmış olsun veya olmasın, link rengi değişmez
+   - Sadece hover efekti uygulanır (isteğe bağlı)
+   - text-decoration kontrolü
+   
+   ===================================================== */
+
+/* Tüm link durumları için aynı renk */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: inherit !important; /* Parent element'in rengini kullan - her zaman */
+  text-decoration: none; /* Alt çizgiyi kaldır */
+}
+
+/* Hover efekti için (isteğe bağlı - sadece opacity değişir) */
+a:hover {
+  opacity: 0.85; /* Hafif soluklaşma efekti */
+  transition: opacity 0.2s ease;
+}
+
+/* Eğer link içinde özel renk tanımlanmışsa bile, inherit kullan */
+a[style*="color"] {
+  color: inherit !important;
+}
+
+/* Özel durum: Eğer link altı çizili olması gerekiyorsa, sadece hover'da göster */
+a[style*="text-decoration:underline"],
+a.underline {
+  text-decoration: underline;
+}
+
+a[style*="text-decoration:underline"]:hover,
+a.underline:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* END of block: Link Styles */
+
 /* ---------- Body background + base font ---------- */
 body {
     font-family:'Segoe UI', Tahoma, sans-serif;
