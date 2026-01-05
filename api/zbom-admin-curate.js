@@ -63,7 +63,7 @@ export default async function handler(req, res) {
   const curated = {
     id: slugify(item.title || item.url || item.id),
     title: item.title || "",
-    img: item.img || "/./img/z0bookmark0010.png",
+    img: item.img || "./img/z0bookmark0010.png",
     href: item.url || item.href || "",
     note: item.note || "",
     category: normalizeCategory(item.category) // ✅ NEW: carry over user's chosen category

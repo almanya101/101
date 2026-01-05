@@ -244,11 +244,11 @@ register("heroExplorer", () => `
   <div id="hero" class="card hero-card">
     <div class="hero-top">
       <div class="hero-logo-box">
-        <img src="/./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+        <img src="./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
         <span class="hero-domain">almanya101.de</span>
       </div>
       <a href="index.html">
-        <img src="/./img/z0cliphome.png" class="home-icon" alt="Home" />
+        <img src="./img/z0cliphome.png" class="home-icon" alt="Home" />
       </a>
     </div>
 
@@ -278,11 +278,11 @@ register("heroExplorer", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
         <div class="hero-logo-box">
-          <img src="/./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+          <img src="./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
           <span class="hero-domain">almanya101.de</span>
         </div>
         <a href="index.html">
-          <img src="/./img/z0cliphome.png" class="home-icon" alt="Home" />
+          <img src="./img/z0cliphome.png" class="home-icon" alt="Home" />
         </a>
       </div>
 
@@ -313,11 +313,11 @@ register("heroExplorer", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
         <div class="hero-logo-box">
-          <img src="/./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+          <img src="./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
           <span class="hero-domain">almanya101.de</span>
         </div>
         <a href="index.html">
-          <img src="/./img/z0cliphome.png" class="home-icon" alt="Home" />
+          <img src="./img/z0cliphome.png" class="home-icon" alt="Home" />
         </a>
       </div>
 
@@ -347,11 +347,11 @@ register("heroExplorer", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
         <div class="hero-logo-box">
-          <img src="/./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+          <img src="./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
           <span class="hero-domain">almanya101.de</span>
         </div>
         <a href="index.html">
-          <img src="/./img/z0cliphome.png" class="home-icon" alt="Home" />
+          <img src="./img/z0cliphome.png" class="home-icon" alt="Home" />
         </a>
       </div>
 
@@ -384,11 +384,11 @@ register("heroExplorer", () => `
     <div id="hero" class="card hero-card">
       <div class="hero-top">
         <div class="hero-logo-box">
-          <img src="/./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+          <img src="./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
           <span class="hero-domain">almanya101.de</span>
         </div>
         <a href="index.html">
-          <img src="/./img/z0cliphome.png" class="home-icon" alt="Home" />
+          <img src="./img/z0cliphome.png" class="home-icon" alt="Home" />
         </a>
       </div>
 
@@ -432,8 +432,8 @@ register("heroExplorer", () => `
 register("cv", () => `
   <div id="cv" class="detail-card card-color-1">
     <div class="card-buttons">
-      <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-      <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+      <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+      <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
     </div>
 
     <h2 class="section-title">My CV</h2>
@@ -501,8 +501,8 @@ register("cv", () => `
 register("achievements", () => `
   <div id="achievements" class="detail-card card-color-2">
     <div class="card-buttons">
-      <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-      <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+      <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+      <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
     </div>
 
     <h2 class="section-title">Key Achievements</h2>
@@ -553,8 +553,8 @@ register("achievements", () => `
 register("techStack", () => `
   <div id="tech" class="detail-card card-color-3">
     <div class="card-buttons">
-      <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-      <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+      <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+      <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
     </div>
 
     <h2 class="section-title">Tech Stack</h2>
@@ -619,8 +619,8 @@ register("techStack", () => `
 register("experience", () => `
   <div id="experience" class="detail-card card-color-4">
     <div class="card-buttons">
-      <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-      <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+      <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+      <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
     </div>
 
     <h2 class="section-title">Experience</h2>
@@ -630,7 +630,7 @@ register("experience", () => `
          ====================== -->
     <div class="exp-section">
       <div class="exp-header">
-        <img src="/./img/logoswisslog.png" class="exp-logo" alt="Swisslog logo" />
+        <img src="./img/logoswisslog.png" class="exp-logo" alt="Swisslog logo" />
         <div class="exp-title">
           <h3 class="exp-role">Test Lead</h3>
           <h4 class="exp-company">Swisslog</h4>
@@ -655,7 +655,7 @@ register("experience", () => `
          ====================== -->
     <div class="exp-section">
       <div class="exp-header">
-        <img src="/./img/logodaimler.png" class="exp-logo" alt="Daimler logo" />
+        <img src="./img/logodaimler.png" class="exp-logo" alt="Daimler logo" />
         <div class="exp-title">
           <h3 class="exp-role">Senior Process Manager</h3>
           <h4 class="exp-company">Daimler – Mercedes-Benz</h4>
@@ -681,7 +681,7 @@ register("experience", () => `
          ====================== -->
     <div class="exp-section">
       <div class="exp-header">
-        <img src="/./img/logodaimler.png" class="exp-logo" alt="Daimler logo" />
+        <img src="./img/logodaimler.png" class="exp-logo" alt="Daimler logo" />
         <div class="exp-title">
           <h3 class="exp-role">Senior Test Manager</h3>
           <h4 class="exp-company">Daimler – Mercedes-Benz</h4>
@@ -707,7 +707,7 @@ register("experience", () => `
          ====================== -->
     <div class="exp-section">
       <div class="exp-header">
-        <img src="/./img/logodaimler.png" class="exp-logo" alt="Daimler logo" />
+        <img src="./img/logodaimler.png" class="exp-logo" alt="Daimler logo" />
         <div class="exp-title">
           <h3 class="exp-role">Development Engineer</h3>
           <h4 class="exp-company">Daimler – Mercedes-Benz</h4>
@@ -757,8 +757,8 @@ register("experience", () => `
 register("corporateProjects", () => `
   <div id="projects-corporate" class="detail-card card-color-5">
     <div class="card-buttons">
-      <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-      <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+      <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+      <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
     </div>
 
     <h2 class="section-title">🚀 Corporate Projects</h2>
@@ -767,7 +767,7 @@ register("corporateProjects", () => `
 
       <!-- Smaragd -->
       <div class="proj-item">
-        <img src="/./img/logosmaragd.png" class="proj-logo" alt="Smaragd logo" />
+        <img src="./img/logosmaragd.png" class="proj-logo" alt="Smaragd logo" />
         <div>
           <h4 class="proj-title">Smaragd – Daimler / Mercedes-Benz</h4>
           <p>
@@ -781,7 +781,7 @@ register("corporateProjects", () => `
 
       <!-- SRM -->
       <div class="proj-item">
-        <img src="/./img/logosrm.png" class="proj-logo" alt="SRM logo" />
+        <img src="./img/logosrm.png" class="proj-logo" alt="SRM logo" />
         <div>
           <h4 class="proj-title">SRM – Daimler / Mercedes-Benz</h4>
           <p>
@@ -794,7 +794,7 @@ register("corporateProjects", () => `
 
       <!-- DARRS -->
       <div class="proj-item">
-        <img src="/./img/logodarrs.png" class="proj-logo" alt="DARRS logo" />
+        <img src="./img/logodarrs.png" class="proj-logo" alt="DARRS logo" />
         <div>
           <h4 class="proj-title">DARRS – Daimler / Mercedes-Benz</h4>
           <p>
@@ -807,7 +807,7 @@ register("corporateProjects", () => `
 
       <!-- Swisslog TKL -->
       <div class="proj-item">
-        <img src="/./img/logotkl.png" class="proj-logo" alt="Swisslog TKL logo" />
+        <img src="./img/logotkl.png" class="proj-logo" alt="Swisslog TKL logo" />
         <div>
           <h4 class="proj-title">TKL - Swisslog</h4>
           <p>
@@ -820,7 +820,7 @@ register("corporateProjects", () => `
 
       <!-- Swisslog Kruitbosch -->
       <div class="proj-item">
-        <img src="/./img/logokruitbosch.png" class="proj-logo" alt="Swisslog Kruitbosch logo" />
+        <img src="./img/logokruitbosch.png" class="proj-logo" alt="Swisslog Kruitbosch logo" />
         <div>
           <h4 class="proj-title">Kruitbosch – Swisslog </h4>
           <p>
@@ -833,7 +833,7 @@ register("corporateProjects", () => `
 
       <!-- Swisslog Albert Heijn -->
       <div class="proj-item">
-        <img src="/./img/logoalbert.png" class="proj-logo" alt="Swisslog Albert Heijn logo" />
+        <img src="./img/logoalbert.png" class="proj-logo" alt="Swisslog Albert Heijn logo" />
         <div>
           <h4 class="proj-title">Albert Heijn – Swisslog </h4>
           <p>
@@ -846,7 +846,7 @@ register("corporateProjects", () => `
 
       <!-- Swisslog EDEKA -->
       <div class="proj-item">
-        <img src="/./img/logoedeka.png" class="proj-logo" alt="Swisslog EDEKA logo" />
+        <img src="./img/logoedeka.png" class="proj-logo" alt="Swisslog EDEKA logo" />
         <div>
           <h4 class="proj-title">EDEKA – Swisslog </h4>
           <p>
@@ -890,8 +890,8 @@ register("corporateProjects", () => `
 register("privateProjects", () => `
   <div id="projects-private" class="detail-card card-color-1">
     <div class="card-buttons">
-      <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-      <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+      <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+      <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
     </div>
 
     <h2 class="section-title">🌟 Private Projects</h2>
@@ -900,7 +900,7 @@ register("privateProjects", () => `
 
       <!-- UBT Testing -->
       <div class="proj-item">
-        <img src="/./img/logoubtest.png" class="proj-logo" alt="UBT Testing logo" />
+        <img src="./img/logoubtest.png" class="proj-logo" alt="UBT Testing logo" />
         <div>
           <h4 class="proj-title">UBT – Testing</h4>
           <p>
@@ -913,7 +913,7 @@ register("privateProjects", () => `
 
       <!-- All in 2 Minutes -->
       <div class="proj-item">
-        <img src="/./img/logoallin2min.png" class="proj-logo" alt="All in 2 Minutes logo" />
+        <img src="./img/logoallin2min.png" class="proj-logo" alt="All in 2 Minutes logo" />
         <div>
           <h4 class="proj-title">All in 2 Minutes!</h4>
           <p>
@@ -926,7 +926,7 @@ register("privateProjects", () => `
 
       <!-- Press Enter to Code -->
       <div class="proj-item">
-        <img src="/./img/logopressenter.png" class="proj-logo" alt="Press Enter to Code logo" />
+        <img src="./img/logopressenter.png" class="proj-logo" alt="Press Enter to Code logo" />
         <div>
           <h4 class="proj-title">Press Enter to Code</h4>
           <p>
@@ -939,7 +939,7 @@ register("privateProjects", () => `
 
       <!-- Software Tester Network -->
       <div class="proj-item">
-        <img src="/./img/logostn.png" class="proj-logo" alt="Software Tester Network logo" />
+        <img src="./img/logostn.png" class="proj-logo" alt="Software Tester Network logo" />
         <div>
           <h4 class="proj-title">Software Tester Network</h4>
           <p>
@@ -952,7 +952,7 @@ register("privateProjects", () => `
 
       <!-- CAL Community -->
       <div class="proj-item">
-        <img src="/./img/logocalcom.png" class="proj-logo" alt="CAL Community logo" />
+        <img src="./img/logocalcom.png" class="proj-logo" alt="CAL Community logo" />
         <div>
           <h4 class="proj-title">CAL Community</h4>
           <p>
@@ -965,7 +965,7 @@ register("privateProjects", () => `
 
       <!-- Picked Scenes -->
       <div class="proj-item">
-        <img src="/./img/logopicked.png" class="proj-logo" alt="Picked Scenes logo" />
+        <img src="./img/logopicked.png" class="proj-logo" alt="Picked Scenes logo" />
         <div>
           <h4 class="proj-title">Picked Scenes!</h4>
           <p>
@@ -978,7 +978,7 @@ register("privateProjects", () => `
 
       <!-- Loved Your T-Shirt -->
       <div class="proj-item">
-        <img src="/./img/logoloved.png" class="proj-logo" alt="Loved Your T-Shirt logo" />
+        <img src="./img/logoloved.png" class="proj-logo" alt="Loved Your T-Shirt logo" />
         <div>
           <h4 class="proj-title">Loved Your T-Shirt</h4>
           <p>
@@ -991,7 +991,7 @@ register("privateProjects", () => `
 
       <!-- Factovium -->
       <div class="proj-item">
-        <img src="/./img/logofactovium.png" class="proj-logo" alt="Factovium logo" />
+        <img src="./img/logofactovium.png" class="proj-logo" alt="Factovium logo" />
         <div>
           <h4 class="proj-title">Factovium</h4>
           <p>
@@ -1004,7 +1004,7 @@ register("privateProjects", () => `
 
       <!-- Don’t Follow Just Like -->
       <div class="proj-item">
-        <img src="/./img/logodontfollow.png" class="proj-logo" alt="Don’t Follow Just Like logo" />
+        <img src="./img/logodontfollow.png" class="proj-logo" alt="Don’t Follow Just Like logo" />
         <div>
           <h4 class="proj-title">Don’t Follow Just Like</h4>
           <p>
@@ -1049,8 +1049,8 @@ register("privateProjects", () => `
 register("contact", () => `
   <div id="contact" class="detail-card card-color-2">
     <div class="card-buttons">
-      <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-      <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+      <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+      <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
     </div>
 
     <h2 class="section-title">İletişim</h2>
@@ -1075,7 +1075,7 @@ register("contact", () => `
           onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 22px rgba(0,0,0,.45)'"
           onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 14px rgba(0,0,0,.35)'"
         >
-          <img src="/./img/logox.png" alt="WhatsApp" style="width:32px;height:32px;" />
+          <img src="./img/logox.png" alt="WhatsApp" style="width:32px;height:32px;" />
         </div>
       </a>
     
@@ -1091,7 +1091,7 @@ register("contact", () => `
           onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 22px rgba(0,0,0,.45)'"
           onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 14px rgba(0,0,0,.35)'"
         >
-          <img src="/./img/logoreddit.png" alt="WhatsApp" style="width:32px;height:32px;" />
+          <img src="./img/logoreddit.png" alt="WhatsApp" style="width:32px;height:32px;" />
         </div>
       </a>
     
@@ -1108,7 +1108,7 @@ register("contact", () => `
           onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 22px rgba(0,0,0,.45)'"
           onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 14px rgba(0,0,0,.35)'"
         >
-          <img src="/./img/logofacebook.png" alt="WhatsApp" style="width:32px;height:32px;" />
+          <img src="./img/logofacebook.png" alt="WhatsApp" style="width:32px;height:32px;" />
         </div>
       </a>
 
@@ -1123,7 +1123,7 @@ register("contact", () => `
           onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 22px rgba(0,0,0,.45)'"
           onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 14px rgba(0,0,0,.35)'"
         >
-          <img src="/./img/logowhatsapp.png" alt="WhatsApp" style="width:32px;height:32px;" />
+          <img src="./img/logowhatsapp.png" alt="WhatsApp" style="width:32px;height:32px;" />
         </div>
       </a>
 
@@ -1138,7 +1138,7 @@ register("contact", () => `
           onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 22px rgba(0,0,0,.45)'"
           onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 14px rgba(0,0,0,.35)'"
         >
-          <img src="/./img/logolinkedin.png" alt="LinkedIn" style="width:32px;height:32px;" />
+          <img src="./img/logolinkedin.png" alt="LinkedIn" style="width:32px;height:32px;" />
         </div>
       </a>
 
@@ -1153,7 +1153,7 @@ register("contact", () => `
           onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 22px rgba(0,0,0,.45)'"
           onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 14px rgba(0,0,0,.35)'"
         >
-          <img src="/./img/logoinstagram.png" alt="Instagram" style="width:32px;height:32px;" />
+          <img src="./img/logoinstagram.png" alt="Instagram" style="width:32px;height:32px;" />
         </div>
       </a>
 
@@ -1168,7 +1168,7 @@ register("contact", () => `
           onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 22px rgba(0,0,0,.45)'"
           onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 14px rgba(0,0,0,.35)'"
         >
-          <img src="/./img/logolocation.png" alt="Location" style="width:32px;height:32px;" />
+          <img src="./img/logolocation.png" alt="Location" style="width:32px;height:32px;" />
         </div>
       </a>
 
@@ -1183,7 +1183,7 @@ register("contact", () => `
           onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 22px rgba(0,0,0,.45)'"
           onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 14px rgba(0,0,0,.35)'"
         >
-          <img src="/./img/logophone.png" alt="Phone" style="width:32px;height:32px;" />
+          <img src="./img/logophone.png" alt="Phone" style="width:32px;height:32px;" />
         </div>
       </a>
 
@@ -1198,7 +1198,7 @@ register("contact", () => `
           onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 22px rgba(0,0,0,.45)'"
           onmouseout="this.style.transform='none';this.style.boxShadow='0 6px 14px rgba(0,0,0,.35)'"
         >
-          <img src="/./img/logoemail.png" alt="Email" style="width:32px;height:32px;" />
+          <img src="./img/logoemail.png" alt="Email" style="width:32px;height:32px;" />
         </div>
       </a>
 
@@ -1235,10 +1235,10 @@ register("aboutme", () => `
 
     <div class="card-buttons">
       <a href="index.html">
-        <img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" />
+        <img src="./img/z0cliphome.png" class="btn-icon" alt="Home" />
       </a>
       <a href="#top">
-        <img src="/./img/z0clipup.png" class="btn-icon" alt="Up" />
+        <img src="./img/z0clipup.png" class="btn-icon" alt="Up" />
       </a>
     </div>
 
@@ -1247,7 +1247,7 @@ register("aboutme", () => `
     <!-- Profile photo -->
     <div style="display:flex; justify-content:center; margin:16px 0;">
       <img 
-        src="/./img/picprofile.png"
+        src="./img/picprofile.png"
         alt="Profile photo"
         style="
           width:120px;
@@ -1301,10 +1301,10 @@ register("support", () => `
 
     <div class="card-buttons">
       <a href="index.html">
-        <img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" />
+        <img src="./img/z0cliphome.png" class="btn-icon" alt="Home" />
       </a>
       <a href="#top">
-        <img src="/./img/z0clipup.png" class="btn-icon" alt="Up" />
+        <img src="./img/z0clipup.png" class="btn-icon" alt="Up" />
       </a>
     </div>
 
@@ -1313,7 +1313,7 @@ register("support", () => `
     <!-- Profile photo -->
     <div style="display:flex; justify-content:center; margin:16px 0;">
       <img 
-        src="/./img/logosupport.png"
+        src="./img/logosupport.png"
         alt="Profile photo"
         style="
           width:120px;
@@ -1368,10 +1368,10 @@ register("globalwarming", () => `
 
     <div class="card-buttons">
       <a href="index.html">
-        <img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" />
+        <img src="./img/z0cliphome.png" class="btn-icon" alt="Home" />
       </a>
       <a href="#top">
-        <img src="/./img/z0clipup.png" class="btn-icon" alt="Up" />
+        <img src="./img/z0clipup.png" class="btn-icon" alt="Up" />
       </a>
     </div>
 
@@ -1380,7 +1380,7 @@ register("globalwarming", () => `
     <!-- Profile photo -->
     <div style="display:flex; justify-content:center; margin:16px 0;">
       <img 
-  src="/./img/z0clipglobal.png"
+  src="./img/z0clipglobal.png"
   alt="Profile photo"
   style="
     width:100%;
@@ -1426,7 +1426,7 @@ register("globalwarming", () => `
           {
             title: "Makale Başlığı",
             date: "01-01-2025",
-            img: "/./img/article.jpg",
+            img: "./img/article.jpg",
             href: "https://...",
             text: "Makale içeriği..."
           }
@@ -1466,9 +1466,9 @@ register("articles", () => {
   return `
     <div id="articles" class="detail-card card-color-3">
       <div class="card-buttons">
-        <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-        <a href="zexplorer.html"><img src="/./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
-        <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+        <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+        <a href="zexplorer.html"><img src="./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
+        <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
       </div>
 
       <h2 class="section-title">Articles</h2>
@@ -1550,11 +1550,11 @@ register("heroArticles", () => `
   <div id="hero" class="card hero-card">
     <div class="hero-top">
       <div class="hero-logo-box">
-        <img src="/./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+        <img src="./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
         <span class="hero-domain">almanya101.de</span>
       </div>
       <a href="index.html">
-        <img src="/./img/z0cliphome.png" class="home-icon" alt="Home" />
+        <img src="./img/z0cliphome.png" class="home-icon" alt="Home" />
       </a>
     </div>
 
@@ -1580,11 +1580,11 @@ register("heroBookmarks", () => `
   <div id="hero" class="card hero-card">
     <div class="hero-top">
       <div class="hero-logo-box">
-        <img src="/./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+        <img src="./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
         <span class="hero-domain">almanya101.de</span>
       </div>
       <a href="index.html">
-        <img src="/./img/z0cliphome.png" class="home-icon" alt="Home" />
+        <img src="./img/z0cliphome.png" class="home-icon" alt="Home" />
       </a>
     </div>
 
@@ -1613,7 +1613,7 @@ register("heroBookmarks", () => `
         bookmarks: [
           {
             title: "Site Adı",
-            img: "/./img/logo.jpg",
+            img: "./img/logo.jpg",
             href: "https://...",
             note: "Açıklama notu"
           }
@@ -2041,9 +2041,9 @@ register("updates", () => {
     <div id="updates" class="detail-card card-color-3">
 
       <div class="card-buttons">
-        <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-        <a href="zexplorer.html"><img src="/./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
-        <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+        <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+        <a href="zexplorer.html"><img src="./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
+        <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
       </div>
 
       <h2 class="section-title">Haberler / Güncellemeler </h2>
@@ -2137,11 +2137,11 @@ register("heroTools", () => `
   <div id="hero" class="card hero-card">
     <div class="hero-top">
       <div class="hero-logo-box">
-        <img src="/./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+        <img src="./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
         <span class="hero-domain">almanya101.de</span>
       </div>
       <a href="index.html">
-        <img src="/./img/z0cliphome.png" class="home-icon" alt="Home" />
+        <img src="./img/z0cliphome.png" class="home-icon" alt="Home" />
       </a>
     </div>
 
@@ -2173,11 +2173,11 @@ register("heroApps", () => `
   <div id="hero" class="card hero-card">
     <div class="hero-top">
       <div class="hero-logo-box">
-        <img src="/./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+        <img src="./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
         <span class="hero-domain">almanya101.de</span>
       </div>
       <a href="index.html">
-        <img src="/./img/z0cliphome.png" class="home-icon" alt="Home" />
+        <img src="./img/z0cliphome.png" class="home-icon" alt="Home" />
       </a>
     </div>
 
@@ -2203,7 +2203,7 @@ register("heroApps", () => `
         apps: [
           {
             title: "Uygulama Adı",
-            img: "/./img/app.jpg",
+            img: "./img/app.jpg",
             href: "https://...",
             note: "Açıklama notu"
           }
@@ -2236,9 +2236,9 @@ register("apps", () => {
     return `
       <div id="apps" class="detail-card card-color-4">
         <div class="card-buttons">
-          <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-          <a href="zexplorer.html"><img src="/./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
-          <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+          <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+          <a href="zexplorer.html"><img src="./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
+          <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
         </div>
 
         <h2 class="section-title">Useful Apps</h2>
@@ -2287,9 +2287,9 @@ register("apps", () => {
   return `
     <div id="apps" class="detail-card card-color-4">
       <div class="card-buttons">
-        <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-        <a href="zexplorer.html"><img src="/./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
-        <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+        <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+        <a href="zexplorer.html"><img src="./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
+        <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
       </div>
 
       <h2 class="section-title">Useful Apps</h2>
@@ -2313,7 +2313,7 @@ register("apps", () => {
         tools: [
           {
             title: "Araç Adı",
-            img: "/./img/tool.jpg",
+            img: "./img/tool.jpg",
             href: "https://...",
             note: "Açıklama notu"
           }
@@ -2346,9 +2346,9 @@ register("tools", () => {
     return `
       <div id="tools" class="detail-card card-color-3">
         <div class="card-buttons">
-          <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-          <a href="zexplorer.html"><img src="/./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
-          <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+          <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+          <a href="zexplorer.html"><img src="./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
+          <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
         </div>
 
         <h2 class="section-title">Tools</h2>
@@ -2397,9 +2397,9 @@ register("tools", () => {
   return `
     <div id="tools" class="detail-card card-color-3">
       <div class="card-buttons">
-        <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-        <a href="zexplorer.html"><img src="/./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
-        <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+        <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+        <a href="zexplorer.html"><img src="./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
+        <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
       </div>
 
       <h2 class="section-title">Tools</h2>
@@ -2419,11 +2419,11 @@ register("tools", () => {
     <div id="hero" class="card hero-card">
       <div class="hero-top">
         <div class="hero-logo-box">
-          <img src="/./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
+          <img src="./img/logoround.png" class="hero-logo" alt="almanya101 logo" />
           <span class="hero-domain">almanya101.de</span>
         </div>
         <a href="index.html">
-          <img src="/./img/z0cliphome.png" class="home-icon" alt="Home" />
+          <img src="./img/z0cliphome.png" class="home-icon" alt="Home" />
         </a>
       </div>
 
@@ -2472,11 +2472,11 @@ register("tools", () => {
     <div id="hero" class="card hero-card">
       <div class="hero-top">
         <div class="hero-logo-box">
-          <img src="/./img/logoround.png" class="hero-logo" alt="UBT logo" />
+          <img src="./img/logoround.png" class="hero-logo" alt="UBT logo" />
           <span class="hero-domain">almanya101.de</span>
         </div>
         <a href="index.html">
-          <img src="/./img/z0cliphome.png" class="home-icon" alt="Home" />
+          <img src="./img/z0cliphome.png" class="home-icon" alt="Home" />
         </a>
       </div>
 
@@ -2601,9 +2601,9 @@ register("haberler", () => {
     <div id="updates" class="detail-card card-color-3">
 
       <div class="card-buttons">
-        <a href="index.html"><img src="/./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
-        <a href="zexplorer.html"><img src="/./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
-        <a href="#top"><img src="/./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+        <a href="index.html"><img src="./img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+        <a href="zexplorer.html"><img src="./img/z0clipexplorer.png" class="btn-icon" alt="Explorer" /></a>
+        <a href="#top"><img src="./img/z0clipup.png" class="btn-icon" alt="Up" /></a>
       </div>
 
       <h2 class="section-title">Haberler / Güncellemeler </h2>
