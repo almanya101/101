@@ -53,7 +53,7 @@ module.exports = async function handler(req, res) {
     body: row.body,
     tag: row.tag,
     created_at: row.created_at,
-    image_url: row.id ? `/img/haberler/${row.id}.jpg` : null
+    image_url: row.id ? `/.img/haberler/${row.id}.jpg` : null
   }));
 
   return res.json({ items });

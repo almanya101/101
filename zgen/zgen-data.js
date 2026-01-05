@@ -3,27 +3,27 @@
    Path: /zgen/zgen-data.js
 
    AVATARS (male + female)
-   Place PNGs under: /img/
+   Place PNGs under: /.img/
 
    Required filenames:
-     /img/gen_silent_m.jpg
-     /img/gen_silent_f.jpg
-     /img/gen_boomer_m.jpg
-     /img/gen_boomer_f.jpg
-     /img/gen_genx_m.jpg
-     /img/gen_genx_f.jpg
-     /img/gen_geny_m.jpg
-     /img/gen_geny_f.jpg
-     /img/gen_genz_m.jpg
-     /img/gen_genz_f.jpg
-     /img/gen_alpha_m.jpg
-     /img/gen_alpha_f.jpg
-     /img/gen_beta_m.jpg
-     /img/gen_beta_f.jpg
+     /.img/gen_silent_m.jpg
+     /.img/gen_silent_f.jpg
+     /.img/gen_boomer_m.jpg
+     /.img/gen_boomer_f.jpg
+     /.img/gen_genx_m.jpg
+     /.img/gen_genx_f.jpg
+     /.img/gen_geny_m.jpg
+     /.img/gen_geny_f.jpg
+     /.img/gen_genz_m.jpg
+     /.img/gen_genz_f.jpg
+     /.img/gen_alpha_m.jpg
+     /.img/gen_alpha_f.jpg
+     /.img/gen_beta_m.jpg
+     /.img/gen_beta_f.jpg
 
    Optional fallbacks:
-     /img/gen_placeholder_m.jpg
-     /img/gen_placeholder_f.jpg
+     /.img/gen_placeholder_m.jpg
+     /.img/gen_placeholder_f.jpg
 
    Compatibility is DIRECTIONAL:
    compat[youGenId][otherGenId] => { dos: [5], donts: [5], joke: "..." }
@@ -65,49 +65,49 @@ const ZGEN_DATA = {
       id: "silent",
       name: "Silent Generation",
       range: [1928, 1945],
-      avatars: { m: "/img/gen_silent_m.jpg", f: "/img/gen_silent_f.jpg" },
+      avatars: { m: "/.img/gen_silent_m.jpg", f: "/.img/gen_silent_f.jpg" },
       avatarAlt: "Silent Generation avatar"
     },
     {
       id: "boomer",
       name: "Baby Boomers",
       range: [1946, 1964],
-      avatars: { m: "/img/gen_boomer_m.jpg", f: "/img/gen_boomer_f.jpg" },
+      avatars: { m: "/.img/gen_boomer_m.jpg", f: "/.img/gen_boomer_f.jpg" },
       avatarAlt: "Baby Boomers avatar"
     },
     {
       id: "genx",
       name: "Gen X",
       range: [1965, 1980],
-      avatars: { m: "/img/gen_genx_m.jpg", f: "/img/gen_genx_f.jpg" },
+      avatars: { m: "/.img/gen_genx_m.jpg", f: "/.img/gen_genx_f.jpg" },
       avatarAlt: "Gen X avatar"
     },
     {
       id: "geny",
       name: "Millennials (Gen Y)",
       range: [1981, 1996],
-      avatars: { m: "/img/gen_geny_m.jpg", f: "/img/gen_geny_f.jpg" },
+      avatars: { m: "/.img/gen_geny_m.jpg", f: "/.img/gen_geny_f.jpg" },
       avatarAlt: "Millennials avatar"
     },
     {
       id: "genz",
       name: "Gen Z",
       range: [1997, 2012],
-      avatars: { m: "/img/gen_genz_m.jpg", f: "/img/gen_genz_f.jpg" },
+      avatars: { m: "/.img/gen_genz_m.jpg", f: "/.img/gen_genz_f.jpg" },
       avatarAlt: "Gen Z avatar"
     },
     {
       id: "alpha",
       name: "Gen Alpha",
       range: [2013, 2025],
-      avatars: { m: "/img/gen_alpha_m.jpg", f: "/img/gen_alpha_f.jpg" },
+      avatars: { m: "/.img/gen_alpha_m.jpg", f: "/.img/gen_alpha_f.jpg" },
       avatarAlt: "Gen Alpha avatar"
     },
     {
       id: "beta",
       name: "Gen Beta",
       range: [2026, 2100],
-      avatars: { m: "/img/gen_beta_m.jpg", f: "/img/gen_beta_f.jpg" },
+      avatars: { m: "/.img/gen_beta_m.jpg", f: "/.img/gen_beta_f.jpg" },
       avatarAlt: "Gen Beta avatar"
     }
   ],
