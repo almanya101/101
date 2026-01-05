@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookmarks – Umut Barış Terzioğlu</title>
+<meta name="description" content="A personal collection of useful bookmarks curated for developers, testers, and tech professionals.">
+
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://ubterzioglu.de/zbookmarks.html">
+  <!-- Shared stylesheet -->
+  <link rel="stylesheet" href="ubt-shared.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://ubterzioglu.de/#person",
+  "name": "Umut Barış Terzioğlu",
+  "url": "https://ubterzioglu.de",
+  "image": "https://ubterzioglu.de/img/logoubt.png",
+  "jobTitle": "Senior Software Quality Assurance Engineer",
+  "sameAs": [
+    "https://www.linkedin.com/in/umutbaristerzioglu"
+  ]
+}
+</script>
+
+
+
+</head>
+
+<body>
+  <a id="top"></a>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <div id="hero-root"></div>
+    <!-- END: HERO ROOT -->
+
+    <!-- NAVGIGATION MANUAL COMMENTED OUT
+     
+    
+    <div class="card nav-card">
+
+      <div class="card-buttons">
+        <a href="index.html">
+          <img src="img/z0cliphome.png" class="btn-icon" alt="Home" />
+        </a>
+        <a href="zexplorer.html">
+          <img src="img/z0clipexplorer.png" class="btn-icon" alt="Explorer" />
+        </a>
+        <a href="#top">
+          <img src="img/z0clipup.png" class="btn-icon" alt="Up" />
+        </a>
+      </div>
+
+      <h2 class="section-title">Navigation</h2>
+
+      <div class="nav-grid">
+        <div class="nav-item" onclick="document.getElementById('bookmarks')?.scrollIntoView();">
+          <span><span class="nav-icon">🔖</span> My Bookmarks</span>
+          <span class="chevron">›</span>
+        </div>
+
+        <div class="nav-item" onclick="document.getElementById('contact')?.scrollIntoView();">
+          <span><span class="nav-icon">☎️</span> Contact</span>
+          <span class="chevron">›</span>
+        </div>
+      </div>
+
+    </div>
+   NAVIGATION MANUAL COMMENTED OUT END -->
+
+    <!-- CARDS ROOT -->
+    <div id="cards-root"></div>
+    <!-- END: CARDS ROOT -->
+<!-- FOOTER -->
+<div style="
+  text-align:center;
+  margin:24px 0 16px 0;
+  color:#ffffff;
+  font-size:12px;
+  letter-spacing:.6px;
+">
+  © almanya101.de · 2026
+</div>
+<!-- END: FOOTER -->
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="card-loader.js"></script>
+  <script src="explorer-data.js"></script>
+  <script>
+    // Hero specific to bookmarks
+    cardLoader.renderInto("hero-root", ["heroBookmarks"]);
+
+    // Content cards
+    cardLoader.renderInto("cards-root", [
+      "bookmarks",
+      "contact"
+    ]);
+  </script>
+  <!-- END: PAGE SCRIPTS -->
+
+
+<script src="/goat.js"></script>
+</body>
+</html>
+<!-- END of file: zbookmarks.html -->

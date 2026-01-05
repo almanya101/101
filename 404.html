@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- BASIC -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>404 - Page Not Found | Umut Barış Terzioğlu (UBT)</title>
+
+  <meta name="description"
+        content="404 error page of ubterzioglu.de. The requested page failed QA checks and could not be found." />
+
+  <link rel="canonical" href="https://ubterzioglu.de/404" />
+  <link rel="icon" type="image/png" href="/img/logoubt.png" />
+
+  <!-- SCHEMA: PERSON -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://ubterzioglu.de/#person",
+    "name": "Umut Barış Terzioğlu",
+    "url": "https://ubterzioglu.de",
+    "image": "https://ubterzioglu.de/img/picprofile.png",
+    "jobTitle": "Senior Software Quality Assurance Engineer",
+    "sameAs": [
+      "https://www.linkedin.com/in/umutbaristerzioglu"
+    ]
+  }
+  </script>
+
+  <!-- SCHEMA: WEBSITE -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Umut Barış Terzioğlu",
+    "url": "https://ubterzioglu.de",
+    "description": "Personal website of Umut Barış Terzioğlu. Articles, tools, apps, and insights about software testing and technology."
+  }
+  </script>
+
+  <!-- STYLE -->
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    :root{
+      --bg0:#f3f2f1;
+      --bg1:#ffffff;
+
+      --primary:#0078D4;
+      --primaryDark:#0F6CBD;
+
+      --card:#ffffff;
+      --cardAlt:#faf9f8;
+
+      --border:#edebe9;
+
+      --text:#201f1e;
+      --muted:#605e5c;
+
+      --shadow: 0 18px 40px rgba(0,0,0,.08);
+      --shadow2: 0 10px 24px rgba(0,0,0,.06);
+    }
+
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px 16px;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 20% 10%, rgba(0,120,212,.08), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(0,120,212,.06), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+    }
+
+    .container{ width:100%; max-width:860px; }
+
+    .mainCard{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .headerBar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 22px;
+      background:var(--cardAlt);
+      border-bottom:1px solid var(--border);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand img{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      object-fit:cover;
+      border:1px solid var(--border);
+      box-shadow:0 6px 16px rgba(0,0,0,.08);
+    }
+
+    .headerRight{
+      font-size:13px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .content{ padding:26px 22px 22px; }
+
+    .hero{
+      text-align:center;
+      padding:6px 10px 16px;
+    }
+
+    .error-code{
+      font-size:104px;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:-2px;
+      color:var(--primary);
+    }
+
+    .bug{
+      font-size:48px;
+      margin:6px 0 6px;
+    }
+
+    h1{
+      font-size:28px;
+      margin:6px 0 8px;
+    }
+
+    .message{
+      font-size:16px;
+      line-height:1.6;
+      color:var(--muted);
+      max-width:620px;
+      margin:0 auto;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:14px;
+      margin-top:14px;
+    }
+
+    .subCard{
+      background:var(--cardAlt);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:16px;
+      box-shadow:var(--shadow2);
+    }
+
+    .subTitle{
+      font-size:12px;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+      color:#323130;
+      margin-bottom:10px;
+      font-weight:600;
+    }
+
+    .metaRow{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .kv{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      padding:8px 10px;
+      border-radius:10px;
+      background:#ffffff;
+      border:1px solid var(--border);
+    }
+
+    .kv b{
+      color:var(--text);
+      font-weight:600;
+    }
+
+    .actions{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .btn{
+      background:#ffffff;
+      border:1px solid var(--border);
+      color:var(--text);
+      padding:12px 16px;
+      text-decoration:none;
+      border-radius:10px;
+      font-size:15px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      transition: background .18s ease, transform .18s ease;
+    }
+
+    .btn:hover{
+      background:#f3f2f1;
+      transform:translateY(-1px);
+    }
+
+    .btn.primary{
+      background:var(--primary);
+      border-color:var(--primary);
+      color:#fff;
+    }
+
+    .btn.primary:hover{
+      background:var(--primaryDark);
+    }
+
+    .footerNote{
+      margin-top:12px;
+      text-align:center;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    @media (max-width:820px){
+      .grid{ grid-template-columns:1fr; }
+      .error-code{ font-size:86px; }
+      h1{ font-size:25px; }
+      .headerRight{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="mainCard">
+      <div class="headerBar">
+        <div class="brand">
+          <img src="/img/logoubt.png" alt="UBT logo">
+          <img src="/img/picprofile.png" alt="UBT profile photo">
+        </div>
+        <div class="headerRight">Local · Private · Fluent-style</div>
+      </div>
+
+      <div class="content">
+        <div class="hero">
+          <div class="error-code">404</div>
+          <div class="bug">⚠️</div>
+          <h1>This page didn’t pass QA</h1>
+          <p class="message">
+            Something expected <b>200 OK</b> but returned <b>404</b> instead.<br>
+            This one slipped through the pipeline.
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="subCard">
+            <div class="subTitle">Test Result</div>
+            <div class="metaRow">
+              <div class="kv"><span>Status</span><b>404 Not Found</b></div>
+              <div class="kv"><span>Expected</span><b>200 OK</b></div>
+              <div class="kv"><span>Actual</span><b>404</b></div>
+              <div class="kv"><span>Outcome</span><b>❌ Failed</b></div>
+            </div>
+          </div>
+
+          <div class="subCard">
+            <div class="subTitle">Actions</div>
+            <div class="actions">
+              <a href="/" class="btn primary">🏠 Go Home</a>
+              <a href="https://www.nasa.gov/" class="btn">👽 Go Somewhere Else</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footerNote">
+          If you typed the URL manually, check the spelling. Otherwise, this is on me.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOATCOUNTER -->
+  <script data-goatcounter="https://ubterzioglude.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

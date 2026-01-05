@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explorer – Umut Barış Terzioğlu</title>
+<meta name="description" content="Explorer hub for articles, bookmarks, apps, and tools by Umut Barış Terzioğlu.">
+
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://ubterzioglu.de/zexplorer.html">
+  <!-- Shared stylesheet -->
+  <link rel="stylesheet" href="ubt-shared.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://ubterzioglu.de/#person",
+  "name": "Umut Barış Terzioğlu",
+  "url": "https://ubterzioglu.de",
+  "image": "https://ubterzioglu.de/img/logoubt.png",
+  "jobTitle": "Senior Software Quality Assurance Engineer",
+  "sameAs": [
+    "https://www.linkedin.com/in/umutbaristerzioglu"
+  ]
+}
+</script>
+
+
+
+</head>
+
+
+
+
+<body>
+
+  <a id="top"></a>
+
+  <div class="container">
+
+    <!-- HERO (always first) -->
+    <div id="hero-root"></div>
+    <!-- END of block: HERO ROOT -->
+
+    <!-- NAVIGATION (MANUAL: you control this) -->
+    <div class="card nav-card">
+
+      <div class="card-buttons">
+        <a href="index.html"><img src="/img/z0cliphome.png" class="btn-icon" alt="Home" /></a>
+        <a href="#top"><img src="/img/z0clipup.png" class="btn-icon" alt="Up" /></a>
+      </div>
+
+      <h2 class="section-title">Navigation</h2>
+
+      <div class="nav-grid">
+
+        <div class="nav-item" onclick="location.href='ztools.html'">
+          <span><span class="nav-icon">🧰</span> Tools Developed by UBT (me) </span>
+          <span class="chevron">›</span>
+        </div>
+       
+       
+       
+        <div class="nav-item" onclick="location.href='zarticles.html'">
+          <span><span class="nav-icon">📝</span> Articles</span>
+          <span class="chevron">›</span>
+        </div>
+
+ <div class="nav-item" onclick="location.href='zbom/zbom.html'">
+          <span><span class="nav-icon">🔖</span> My Bookmarks</span>
+          <span class="chevron">›</span>
+        </div>
+
+        
+        <div class="nav-item" onclick="location.href='zapps.html'">
+          <span><span class="nav-icon">🗂️</span> Useful Apps </span>
+          <span class="chevron">›</span>
+        </div>
+
+       
+
+        <div class="nav-item" onclick="document.getElementById('contact')?.scrollIntoView();">
+          <span><span class="nav-icon">☎️</span> Contact</span>
+          <span class="chevron">›</span>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- END of block: NAVIGATION (MANUAL) -->
+
+    <!-- AUTO CARDS ROOT (rendered by card-loader.js) -->
+    <div id="cards-root"></div>
+    <!-- END of block: CARDS ROOT -->
+
+
+    <!-- FOOTER -->
+<div style="
+  text-align:center;
+  margin:24px 0 16px 0;
+  color:#ffffff;
+  font-size:12px;
+  letter-spacing:.6px;
+">
+  © almanya101.de · 2026
+</div>
+<!-- END: FOOTER -->
+
+
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="card-loader.js"></script>
+  <script>
+    // 1) HERO always on top
+    cardLoader.renderInto("hero-root", ["heroExplorer"]);
+
+    // 2) Cards below navigation
+    cardLoader.renderInto("cards-root", [
+      "contact"
+    ]);
+  </script>
+  <!-- END of block: PAGE SCRIPTS -->
+
+  
+<script src="/goat.js"></script>
+</body>
+</html>

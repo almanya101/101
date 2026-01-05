@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>ZBOM — Bookmarks · Umut Barış Terzioğlu</title>
+  <meta name="description" content="ZBOM is a curated bookmarks explorer with user submissions. Discover useful links by category, search fast, and submit your own bookmarks." />
+  <meta name="robots" content="index,follow" />
+
+  <link rel="canonical" href="https://ubterzioglu.de/zbom/zbom.html" />
+
+  <link rel="stylesheet" href="/ubt-shared.css" />
+  <link rel="stylesheet" href="/zbom/zbom.css" />
+<link rel="stylesheet" href="/zbom/zbom-cards.css" />
+
+
+  <!-- =====================================================
+       STRUCTURED DATA: PERSON (SHARED ID)
+       ===================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://ubterzioglu.de/#person",
+    "name": "Umut Barış Terzioğlu",
+    "url": "https://ubterzioglu.de",
+    "image": "https://ubterzioglu.de/img/logoubt.png",
+    "jobTitle": "Senior Software Quality Assurance Engineer",
+    "sameAs": [
+      "https://www.linkedin.com/in/umutbaristerzioglu"
+    ]
+  }
+  </script>
+
+  <!-- =====================================================
+       STRUCTURED DATA: WEBPAGE (ZBOM)
+       ===================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://ubterzioglu.de/zbom/zbom.html#webpage",
+    "url": "https://ubterzioglu.de/zbom/zbom.html",
+    "name": "ZBOM — Bookmarks · Umut Barış Terzioğlu",
+    "description": "A curated bookmarks explorer with user submissions. Browse categories, search instantly, and submit new bookmarks.",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://ubterzioglu.de/#website",
+      "url": "https://ubterzioglu.de/",
+      "name": "Umut Barış Terzioğlu"
+    },
+    "about": {
+      "@type": "Person",
+      "@id": "https://ubterzioglu.de/#person",
+      "name": "Umut Barış Terzioğlu",
+      "url": "https://ubterzioglu.de/"
+    }
+  }
+  </script>
+  <!-- END: STRUCTURED DATA -->
+</head>
+
+<body>
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- Sidebar Avatars -->
+      <div class="sidebar-avatars">
+        <a href="../index.html" aria-label="Go to Home">
+          <img src="/img/logoubt.png" alt="UBT Logo" />
+        </a>
+        <a href="../index.html" aria-label="Go to Home">
+          <img src="/img/picprofile.png" alt="UBT Profile" />
+        </a>
+      </div>
+      <!-- /Sidebar Avatars -->
+<!-- ZBOM Comic Logo -->
+<div class="zbom-logo">
+  <a href="../zbom/zbom.html" aria-label="Go to Home">
+  <img src="/zbom/logozbom.png" alt="ZBOM Logo" />
+  </a>
+</div>
+      <!-- Brand -->
+      <div class="brand" title="ZBOM">
+        <div>
+      
+          <!--    <b>ZBOM</b> -->
+
+          <span>Your favorite links, one place.</span>
+        </div>
+      </div>
+      <!-- /Brand -->
+
+      <div class="nav" id="nav"></div>
+
+      <div class="sidebarBottom">
+        <button class="submitBtn" id="openSubmit">Submit</button>
+        <div class="mini">
+          User submissions go to <b>Added by users</b>.<br/>
+          Curated collections are maintained separately.
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <div class="topbar">
+        <button class="hamb" id="hamb" aria-label="Open menu" aria-expanded="false">☰</button>
+        <div class="titleRow">
+          <h1 id="viewTitle">Explore</h1>
+          <span class="pill warn" id="syncPill">Loading…</span>
+        </div>
+
+        <div class="search" title="Search">
+          <span style="opacity:.7">⌕</span>
+          <input id="q" placeholder="Search…" autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="hint" id="empty" style="display:none;margin-top:14px;opacity:.75">
+        No results. Try another keyword or category.
+      </div>
+    </main>
+  </div>
+<div class="sbOverlay" id="sbOverlay" aria-hidden="true"></div>
+
+  <!-- SUBMIT MODAL -->
+  <div class="modalOverlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Submit bookmark">
+      <div class="modalHead">
+        <b>Submit a bookmark</b>
+        <button class="close" id="closeModal">Close</button>
+      </div>
+
+      <div class="modalBody">
+        <div class="row two">
+          <div>
+            <label>Title</label>
+            <input id="sTitle" placeholder="e.g. PortableApps" />
+          </div>
+          <div>
+            <label>URL</label>
+            <input id="sUrl" placeholder="https://…" />
+          </div>
+        </div>
+
+        <div class="row two">
+          <div>
+            <label>Suggested category</label>
+            <select id="sCat"></select>
+          </div>
+          <div>
+            <label>Optional image URL</label>
+            <input id="sImg" placeholder="https://… (optional)" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>Note</label>
+            <textarea id="sNote" placeholder="Why is it useful? Keep it short."></textarea>
+          </div>
+        </div>
+
+        <div class="hint" id="submitMsg" style="margin-top:10px"></div>
+      </div>
+
+      <div class="modalFoot">
+        <button class="btn secondary" id="submitCancel">Cancel</button>
+        <button class="btn" id="submitSend">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPORTANT: curated set lives in explorer-data.js -->
+  <script src="/explorer-data.js"></script>
+  <script src="/zbom/zbom.js"></script>
+
+  <!-- COUNTER GOAT GOAT GOAT GOAT GOAT  -->
+  <script data-goatcounter="https://ubterzioglude.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<!-- COUNTER GOAT GOAT GOAT GOAT GOAT  -->
+
+
+
+</body>
+</html>

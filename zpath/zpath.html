@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- =========================================================
+    BASIC META
+  ========================================================== -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZPATH – Career Decision Check (Yes / No)</title>
+
+  <link rel="canonical" href="https://ubterzioglu.de/zpath/zpath.html" />
+  <meta name="description" content="A quick yes/no flow that checks whether your career decision is driven more by logic or emotion. No signup. No data stored. Runs in your browser." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Standalone CSS (ZBOM / Arca look) -->
+  <link rel="stylesheet" href="/zpath/zpath.css?v=1" />
+
+  <!-- =========================================================
+    OPEN GRAPH / TWITTER
+  ========================================================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ZPATH – Career Decision Check" />
+  <meta property="og:description" content="15 yes/no questions to see if your decision is driven more by logic or emotion. No signup. No storage." />
+  <meta property="og:url" content="https://ubterzioglu.de/zpath/zpath.html" />
+  <meta property="og:image" content="https://ubterzioglu.de/img/logoubt.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- =========================================================
+    STRUCTURED DATA (keep IDs consistent)
+  ========================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://ubterzioglu.de/zpath/zpath.html#webpage",
+    "url": "https://ubterzioglu.de/zpath/zpath.html",
+    "name": "ZPATH – Career Decision Check",
+    "description": "A privacy-first yes/no career decision check that runs entirely in your browser.",
+    "isPartOf": { "@type": "WebSite", "@id": "https://ubterzioglu.de/#website" },
+    "about": { "@type": "Person", "@id": "https://ubterzioglu.de/#person" }
+  }
+  </script>
+
+  <!-- COUNTER GOAT -->
+  <script data-goatcounter="https://ubterzioglude.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div>
+          <h1 class="title">ZPATH (Yes / No)</h1>
+          <p class="subtitle">
+            15 quick questions to check if your career decision is driven more by logic or emotion.
+            No signup. No storage. ~90 seconds.
+          </p>
+        </div>
+
+        <div class="topbar-right">
+          <div class="pill" id="counter">Question 1 / 15</div>
+          <div class="bar"><div id="progress"></div></div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <main class="content">
+        <p class="q" id="qText">Loading…</p>
+        <p class="hint" id="qHint"></p>
+
+        <div class="btnrow">
+          <button id="yesBtn">Yes</button>
+          <button id="noBtn">No</button>
+          <button class="ghost" id="backBtn">Back</button>
+          <button class="ghost" id="restartBtn">Restart</button>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="results" id="results">
+          <div class="tool" id="top1"></div>
+          <div class="tool" id="top2"></div>
+        </div>
+
+        <!-- CTA -->
+        <div class="ai-cta">
+          <p>Feel free to like, comment, or share to help spread it.</p>
+          <p>Your feedback keeps this alive and pushes me to build more.</p>
+          <p>
+            Looking for more tools?
+            <a href="https://ubterzioglu.de/ztools.html" target="_blank" rel="noopener">Click!</a>
+          </p>
+          <p>Thanks. <strong>UBT</strong>.</p>
+        </div>
+
+        <!-- CORNER WIDGET -->
+        <div class="corner-widget">
+          <a href="../index.html">
+            <img src="/img/logoubt.png" alt="UBT" class="widget-avatar" />
+          </a>
+          <a href="../index.html">
+            <img src="/img/picprofile.png" alt="Profile" class="widget-avatar logo" />
+          </a>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script defer src="/zpath/zpath.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!-- =========================================================
+  FILE: /zats/zats.html
+  PURPOSE:
+  - Upload text-based CV PDF OR paste CV text
+  - Optional Job Description paste for keyword matching
+  - ATS Readability score runs IN THE BROWSER
+  - No data uploaded (client-side only)
+========================================================= -->
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- =========================================================
+    BASIC META
+  ========================================================== -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZATS – ATS Readability Score</title>
+
+  <link rel="canonical" href="https://ubterzioglu.de/zats/zats.html" />
+  <meta name="description" content="Upload a text-based CV PDF or paste CV text and estimate ATS readability in your browser. Optional job description keyword match. No data is uploaded." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Standalone stylesheet (NO ubt-shared.css) -->
+  <link rel="stylesheet" href="/zats/zats.css?v=1" />
+
+  <!-- =========================================================
+    OPEN GRAPH / TWITTER
+  ========================================================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ZATS – ATS Readability Score" />
+  <meta property="og:description" content="Upload a CV PDF or paste text. Estimate ATS readability in-browser (no upload). Optional JD keyword match." />
+  <meta property="og:url" content="https://ubterzioglu.de/zats/zats.html" />
+  <meta property="og:image" content="https://ubterzioglu.de/img/logoubt.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ZATS – ATS Readability Score" />
+  <meta name="twitter:description" content="Upload a CV PDF or paste text. Estimate ATS readability in-browser (no upload)." />
+  <meta name="twitter:image" content="https://ubterzioglu.de/img/logoubt.png" />
+
+  <!-- =========================================================
+    STRUCTURED DATA
+  ========================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://ubterzioglu.de/#person",
+    "name": "Umut Barış Terzioğlu",
+    "url": "https://ubterzioglu.de",
+    "image": "https://ubterzioglu.de/img/logoubt.png",
+    "jobTitle": "Senior Software Quality Assurance Engineer",
+    "sameAs": ["https://www.linkedin.com/in/umutbaristerzioglu"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://ubterzioglu.de/#website",
+    "name": "Umut Barış Terzioğlu",
+    "url": "https://ubterzioglu.de",
+    "description": "Personal website of Umut Barış Terzioğlu. Articles, tools, apps, and insights about software testing and technology."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://ubterzioglu.de/zats/zats.html#webpage",
+    "url": "https://ubterzioglu.de/zats/zats.html",
+    "name": "ZATS – ATS Readability Score",
+    "description": "Upload a text-based CV PDF or paste CV text and estimate ATS readability in your browser. Optional job description keyword match. No data is uploaded.",
+    "inLanguage": "en",
+    "isPartOf": { "@type": "WebSite", "@id": "https://ubterzioglu.de/#website" },
+    "about": { "@type": "Person", "@id": "https://ubterzioglu.de/#person" }
+  }
+  </script>
+
+  <!-- COUNTER GOAT -->
+  <script data-goatcounter="https://ubterzioglude.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+
+  <!-- PDF.js (LOCAL) -->
+  <script defer src="./vendor/pdfjs/pdf.min.js?v=1"></script>
+
+  <!-- ZATS tool JS -->
+  <script defer src="./js/zats-tool.js?v=1"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="title">ZATS – ATS Readability Score</h1>
+          <p class="subtitle">Your CV is never uploaded. Analysis is performed entirely in your browser. (Client-side • No upload • Not affiliated with any ATS)</p>
+        </div>
+
+        <div class="topbar-right">
+          <div class="pill" id="counter">Ready</div>
+          <div class="bar" aria-label="Progress">
+            <div id="progress"></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <div class="grid">
+          <!-- INPUT + RESULT -->
+          <section class="panel">
+            <h2 class="panel-title">Upload CV PDF or paste text</h2>
+
+            <div class="fileRow">
+              <input type="file" id="pdfUpload" accept="application/pdf" />
+            </div>
+
+            <div class="btnRow">
+              <button id="btnExtract" type="button">Extract text from PDF</button>
+              <button id="btnScore" type="button">Calculate score</button>
+              <button id="btnClear" type="button">Clear</button>
+            </div>
+
+            <div id="result" class="status">Ready.</div>
+            <p id="hint" class="hint">Tip: Text-based PDFs work best. If your PDF is scanned (image-only), paste text instead.</p>
+
+            <!-- INSIGHTS (shown after scoring) -->
+            <div id="insights" class="panel insights-panel" style="display:none;">
+              <h2 class="panel-title">Quick Improvements</h2>
+
+              <div class="insights-grid">
+                <div class="insight-block issues">
+                  <strong>Top Issues</strong>
+                  <ul id="issuesList"></ul>
+                </div>
+
+                <div class="insight-block fixes">
+                  <strong>Top Fixes</strong>
+                  <ul id="fixesList"></ul>
+                </div>
+              </div>
+            </div>
+            <!-- /INSIGHTS -->
+
+            <div class="sep"></div>
+
+            <div>
+              <h2 class="panel-title">CV Text</h2>
+              <textarea id="cvText" placeholder="Paste CV text here (or extract from PDF)..." rows="8"></textarea>
+
+              <div style="height:12px"></div>
+
+              <h2 class="panel-title">Job Description (optional)</h2>
+              <textarea id="jdText" placeholder="Paste job description to get keyword match-based scoring..." rows="6"></textarea>
+
+              <div class="tiny">
+                This tool estimates ATS-readiness (parseability + structure + keyword + evidence). It does not guarantee interview outcomes.
+              </div>
+            </div>
+
+            <div class="sep"></div>
+
+            <div class="ai-cta">
+              <p>Feel free to like, comment, or share to help spread it.</p>
+              <p>Your feedback keeps this alive and pushes me to build more.</p>
+              <p>
+                Looking for more tools?
+                <a href="https://ubterzioglu.de/ztools.html" target="_blank" rel="noopener">Click!</a>
+              </p>
+              <p>Thanks. <strong>UBT</strong>.</p>
+            </div>
+          </section>
+
+          <!-- PREVIEW -->
+          <section class="panel preview-panel">
+            <h2 class="panel-title">Preview (extracted text)</h2>
+            <div id="previewText" class="previewBox">Nothing extracted yet.</div>
+
+            <p class="hint small">
+              Tip: If the preview looks messy (multi-column), export a single-column PDF for better ATS parsing.
+            </p>
+          </section>
+        </div>
+
+        <!-- Corner Widget -->
+        <div class="corner-widget">
+          <a href="../index.html" aria-label="Go to Home">
+            <img src="/img/picprofile.png" alt="Profile" class="widget-avatar" />
+          </a>
+          <a href="../index.html" aria-label="Go to Home">
+            <img src="/img/logoubt.png" alt="Logo" class="widget-avatar logo" />
+          </a>
+        </div>
+        <!-- /Corner Widget -->
+      </main>
+    </div>
+  </div>
+
+  <!-- OPTIONAL UI SYNC -->
+  <script>
+    const counterEl = document.getElementById("counter");
+    const barEl = document.getElementById("progress");
+    const resultEl = document.getElementById("result");
+
+    function setUI(label, pct){
+      counterEl.textContent = label;
+      barEl.style.width = (pct || 0) + "%";
+    }
+
+    setUI("Ready", 20);
+
+    const obs = new MutationObserver(() => {
+      const t = (resultEl.textContent || "").toLowerCase();
+
+      if (t.includes("extracting")) setUI("Extracting…", 55);
+      else if (t.includes("scoring")) setUI("Scoring…", 80);
+      else if (t.includes("/100")) setUI("Done", 100);
+      else if (t.includes("error") || t.includes("failed")) setUI("Error", 35);
+      else setUI("Ready", 20);
+    });
+
+    obs.observe(resultEl, { childList:true, characterData:true, subtree:true });
+  </script>
+</body>
+</html>
+<!-- =========================================================
+  END OF FILE: /zats/zats.html
+========================================================= -->
