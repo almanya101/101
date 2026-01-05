@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Soru & Cevap - Almanya101</title>
+    <meta name="description" content="Almanya'da yaşam hakkında 2500+ soru ve cevap. Anmeldung, vize, iş, sigorta ve daha fazlası.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://almanya101.de/qa/qa.html">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/qa/qa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json" id="faq-schema">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": []
+    }
+    </script>
+</head>
+<body class="qa-page">
+    <!-- Navigation Header -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <span class="logo-text">almanya<span class="logo-highlight">101</span></span>
+                    <span class="logo-dot">.</span><span class="logo-de">de</span>
+                </a>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Haber</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="/haberler/haberindex.html" class="dropdown-item">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Tüm Haberler</span>
+                        </a>
+                        <a href="/haberler/haberindex.html?tag=dunya" class="dropdown-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Dünya</span>
+                        </a>
+                        <a href="/haberler/haberindex.html?tag=avrupa" class="dropdown-item">
+                            <i class="fas fa-earth-europe"></i>
+                            <span>Avrupa</span>
+                        </a>
+                        <a href="/haberler/haberindex.html?tag=almanya" class="dropdown-item">
+                            <i class="fas fa-flag"></i>
+                            <span>Almanya</span>
+                        </a>
+                        <a href="/haberler/haberindex.html?tag=turkiye" class="dropdown-item">
+                            <i class="fas fa-star-and-crescent"></i>
+                            <span>Türkiye</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-tools"></i>
+                        <span>Araçlar</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-large">
+                        <a href="/maas/maas.html" class="dropdown-item">
+                            <i class="fas fa-calculator"></i>
+                            <span>Net Maaş Hesaplama</span>
+                        </a>
+                        <a href="/banka/banka.html" class="dropdown-item">
+                            <i class="fas fa-building-columns"></i>
+                            <span>Banka Seçimi</span>
+                        </a>
+                        <a href="/sigorta/sigorta.html" class="dropdown-item">
+                            <i class="fas fa-shield-halved"></i>
+                            <span>Sigorta Seçimi</span>
+                        </a>
+                        <a href="/transfer/transfer.html" class="dropdown-item">
+                            <i class="fas fa-money-bill-transfer"></i>
+                            <span>Para Transferi</span>
+                        </a>
+                        <a href="/tatilde/holiday.html" class="dropdown-item">
+                            <i class="fas fa-calendar-day"></i>
+                            <span>Tatil Planlayıcı</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="/qa/qa.html" class="nav-link">
+                        <i class="fas fa-comments"></i>
+                        <span>Soru & Cevap</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <a href="https://chat.whatsapp.com/JXzMvjJoc57EKDDABSB0jo" target="_blank" class="btn-primary">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Topluluğa Katıl</span>
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="qa-main">
+        <!-- Logo Section -->
+        <div class="qa-logo-container">
+            <img src="/img/almanya101-logo.png" alt="Almanya101" class="qa-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="qa-logo-placeholder" style="display: none;">
+                <span class="logo-text-large">almanya<span class="logo-highlight">101</span><span class="logo-dot">.</span><span class="logo-de">de</span></span>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="qa-stats">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-folder-open"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number" id="categoryCount">0</div>
+                    <div class="stat-label">Kategori</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number" id="questionCount">0</div>
+                    <div class="stat-label">Soru & Cevap</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="search-input"
+                    placeholder="Soru ara... (örn: anmeldung, vize, sigorta)"
+                    autocomplete="off"
+                >
+                <button class="search-clear" id="searchClear" style="display: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results-info" id="searchInfo" style="display: none;">
+                <span id="resultCount">0</span> sonuç bulundu
+            </div>
+        </div>
+
+        <!-- Questions List (hidden by default) -->
+        <div class="qa-list-container" id="qaListContainer" style="display: none;">
+            <div id="qaList" class="qa-list"></div>
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <p>Aradığınız kriterlere uygun soru bulunamadı.</p>
+                <small>Farklı kelimeler deneyin veya aramanızı genişletin.</small>
+            </div>
+        </div>
+
+        <!-- Initial Message -->
+        <div class="initial-message" id="initialMessage">
+            <i class="fas fa-search-plus"></i>
+            <h2>2500+ Soru İçinde Arama Yapın</h2>
+            <p>Yukarıdaki arama kutusunu kullanarak istediğiniz konuyu bulabilirsiniz.</p>
+            <div class="popular-searches">
+                <span class="popular-label">Popüler Aramalar:</span>
+                <button class="popular-tag" data-search="anmeldung">Anmeldung</button>
+                <button class="popular-tag" data-search="vize">Vize</button>
+                <button class="popular-tag" data-search="sigorta">Sigorta</button>
+                <button class="popular-tag" data-search="maaş">Maaş</button>
+                <button class="popular-tag" data-search="iş">İş Bulma</button>
+                <button class="popular-tag" data-search="çocuk">Çocuk</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="/scripts/main.js"></script>
+    <script src="/qa/qa.js"></script>
+
+    <!-- GoatCounter Analytics -->
+    <script data-goatcounter="https://almanya101.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

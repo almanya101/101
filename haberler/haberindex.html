@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Primary Meta Tags -->
+  <title>Haberler | Almanya101 - Güncel Haberler</title>
+  <meta name="title" content="Haberler | Almanya101 - Güncel Haberler">
+  <meta name="description" content="Almanya101 güncel haberler: Dünya, Avrupa, Almanya ve Türkiye kategorilerinde kısa bilgi ve uzun metin özetleri." />
+  <meta name="keywords" content="almanya haberler, türk haberleri, almanya gündem, dünya haberleri, avrupa haberleri">
+  <meta name="author" content="Almanya101.de">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://almanya101.de/haberler/haberindex.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://almanya101.de/haberler/haberindex.html">
+  <meta property="og:title" content="Haberler | Almanya101 - Güncel Haberler">
+  <meta property="og:description" content="Almanya, Türkiye, Avrupa ve Dünya'dan güncel haberler. Türkçe haber kaynağınız.">
+  <meta property="og:image" content="https://almanya101.de/img/ALMANYA101.jpg">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Almanya101">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://almanya101.de/haberler/haberindex.html">
+  <meta name="twitter:title" content="Haberler | Almanya101">
+  <meta name="twitter:description" content="Almanya, Türkiye, Avrupa ve Dünya'dan güncel haberler.">
+  <meta name="twitter:image" content="https://almanya101.de/img/ALMANYA101.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/style-shared.css" />
+  <link rel="stylesheet" href="/haberler/css/haber.css" />
+
+  <!-- Structured Data: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://almanya101.de/haberler/haberindex.html#webpage",
+    "url": "https://almanya101.de/haberler/haberindex.html",
+    "name": "Haberler - Almanya101",
+    "description": "Almanya, Türkiye, Avrupa ve Dünya'dan güncel haberler",
+    "inLanguage": "tr",
+    "isPartOf": {
+      "@id": "https://almanya101.de/#website"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ana Sayfa",
+        "item": "https://almanya101.de/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Haberler",
+        "item": "https://almanya101.de/haberler/haberindex.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="news-hero">
+    <div class="wrap">
+      <p class="eyebrow">Haberler</p>
+      <h1>Güncel haber kartları</h1>
+      <p class="lead">Dünya, Avrupa, Almanya ve Türkiye başlıkları altında öne çıkan haberleri tek sayfada filtreleyin, arayın, detayları okuyun.</p>
+    </div>
+  </header>
+
+  <main class="wrap news-main">
+    <section class="filters">
+      <label class="search">
+        <span class="search__label">Haber ara</span>
+        <input id="searchInput" type="search" placeholder="Başlık veya içerikte ara" autocomplete="off" />
+      </label>
+
+      <div class="chips" role="group" aria-label="Kategoriler">
+        <button class="chip chip--active" data-tag="all">Tümü</button>
+        <button class="chip" data-tag="dunya">Dünya</button>
+        <button class="chip" data-tag="avrupa">Avrupa</button>
+        <button class="chip" data-tag="almanya">Almanya</button>
+        <button class="chip" data-tag="turkiye">Türkiye</button>
+      </div>
+    </section>
+
+    <section>
+      <div id="resultsMeta" class="results-meta">Yükleniyor…</div>
+      <div id="newsGrid" class="news-grid" aria-live="polite"></div>
+      <div id="emptyState" class="empty hidden">Sonuç bulunamadı. Farklı bir anahtar kelime veya kategori deneyin.</div>
+      <div id="errorState" class="error hidden">Haberler yüklenemedi. Lütfen sayfayı yenileyin.</div>
+    </section>
+  </main>
+
+  <script src="/haberler/js/haber.js"></script>
+
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://almanya101.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

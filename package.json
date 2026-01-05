@@ -1,0 +1,15 @@
+{
+  "name": "almanya101-static-qa",
+  "private": true,
+  "version": "1.0.0",
+  "description": "almanya101.de static site + QA form (Vercel serverless + Zoho SMTP)",
+  "scripts": {
+    "vercel-build": "echo \"Static site – no build step\"",
+    "dev": "npx vercel dev",
+    "start": "npx vercel dev"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.14",
+    "@supabase/supabase-js": "^2.45.4"
+  }
+}
